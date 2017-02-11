@@ -6,6 +6,14 @@ body,
     height: 100%;
 }
 
+body {
+    padding-top: 100px;
+}
+
+.app {
+    min-height: 800px;
+}
+
 .view {
     background: url("../img/homepage_background.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -15,37 +23,40 @@ body,
 }
 
 .hm-black-strong .full-bg-img, .hm-black-strong .mask {
-     background-color: rgba(227, 8, 19, 0.60);
+     background-color: rgba(227, 8, 19, 0.80);
 }
 
-.flex-center {
+.btn-default {
     color: #fff;
+    background: rgba(227, 8, 19, 0.80);
 }
 
-#contact .fa {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.navbar-inverse {
+    background-color: rgba(227, 8, 19, 0.80);
 }
 
-.navbar {
-    background-color: transparent;
+a {
+    color: rgba(227, 8, 19, 0.80);
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-}
-.scrolling-navbar {
-        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
-        transition: background .5s ease-in-out, padding .5s ease-in-out;
+a:hover {
+    color: rgba(227, 8, 19, 0.99);
 }
 
-.top-nav-collapse {
-    background-color: #1C2331;
+.navbar-brand-name {
+    color: white;
 }
 
-input.form-login {
-    color: white!important;
+.dropdown-menu li>a, .dropdown-menu li>span {
+    font-size: 1.2rem;
+    color: rgba(227, 8, 19, 0.80);
+    display: block;
+    padding: 1rem;
+}
+
+@media (min-width: 767px)
+.navbar-fixed-top {
+    padding: 0px!important;
 }
 
 @media only screen and (max-width: 768px) {

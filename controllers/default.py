@@ -40,7 +40,7 @@ def user():
     """
     response.title = T("Autenticación | SIMEAT")
 
-    form_login = FORM(INPUT(_name='email', _class="form-control form-login wow fadeInLeft", _placeholder=T("Correo"), requires=IS_NOT_EMPTY()),
+    '''form_login = FORM(INPUT(_name='email', _class="form-control form-login wow fadeInLeft", _placeholder=T("Correo"), requires=IS_NOT_EMPTY()),
                       INPUT(_name='password', _class="form-control form-login wow fadeInRight", _type="password", _placeholder=T("Contraseña"),requires=IS_NOT_EMPTY()),
                       INPUT(_type='submit', _value=T("Ingresar"), _class="wow fadeInLeft"), _class="waves-light")
 
@@ -52,10 +52,9 @@ def user():
             response.flash = T('Usuario o contraseña no válidos')
     elif form_login.errors:
         response.flash = T('El formulario tiene errores')
-    else:
-        form_login.flash = T('Autenticase en SIMEAT')
+    else:'''
 
-    return dict(form=auth(), form_login=form_login)
+    return dict(form=auth())
 
 
 @cache.action()

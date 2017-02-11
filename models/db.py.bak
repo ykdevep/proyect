@@ -62,8 +62,8 @@ response.form_label_separator = myconf.get('forms.separator') or ''
 # -------------------------------------------------------------------------
 # (optional) optimize handling of static files
 # -------------------------------------------------------------------------
-# response.optimize_css = 'concat,minify,inline'
-# response.optimize_js = 'concat,minify,inline'
+response.optimize_css = 'concat,minify,inline'
+response.optimize_js = 'concat,minify,inline'
 
 # -------------------------------------------------------------------------
 # (optional) static assets folder versioning
@@ -106,7 +106,7 @@ auth.settings.extra_fields['auth_user']= [
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
 # -------------------------------------------------------------------------
-auth.define_tables(username=True, signature=False)
+auth.define_tables(username=False, signature=False)
 
 db._common_fields.append(auth.signature)
 

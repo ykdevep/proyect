@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+<h3 class="wow fadeInLeft">Nuevo Estudiante</h3>
+
+<hr />
+
+<div class="wow fadeInUp">
+    {{=form}}
+</div>

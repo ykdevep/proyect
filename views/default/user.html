@@ -1,15 +1,19 @@
 {{extend 'layout_homepage.html'}}
+{{block login}}
 
-{{block page_login}}
     {{
-    if request.args(0)=='login':
+    if request.args(0)=='login' and not session.auth_2_factor_user:
+        if not 'register' in auth.settings.actions_disabled:
+            form.add_button(T('Register'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn')
+        pass
         if not 'request_reset_password' in auth.settings.actions_disabled:
-            form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn btn-default')
+            form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn')
         pass
     pass
-    =form_login
+    =form
     }}
-{{end page_login}}
+
+{{end}}
 
 
 {{block page_js}}

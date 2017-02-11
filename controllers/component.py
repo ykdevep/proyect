@@ -7,7 +7,7 @@ def show_carousel():
     """
     if request.cid:
         import datetime
-        banners = db((db.banner.publicar_en <= datetime.datetime.today()) & (db.banner.habilitado == True) & (db.banner.imagen != "")).select(orderby =~ db.banner.publicar_en, limitby=(0,10), cache=(cache.ram, 60), cacheable=True)
+        banners = None#db((db.banner.publicar_en <= datetime.datetime.today()) & (db.banner.habilitado == True) & (db.banner.imagen != "")).select(orderby =~ db.banner.publicar_en, limitby=(0,10), cache=(cache.ram, 60))
         return dict(banners=banners)        
     else:
         raise HTTP(403)

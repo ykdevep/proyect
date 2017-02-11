@@ -155,7 +155,7 @@ auth.settings.remember_me_form = False
 # -------------------------------------------------------------------------
 # auth.enable_record_versioning(db)
 
-NEWS_WIDTH = 2340
+'''NEWS_WIDTH = 2340
 NEWS_HEIGTH = 600
 
 db.define_table('banner',
@@ -173,6 +173,7 @@ db.banner.publicar_en.requires = IS_DATE()
 db.banner.imagen.requires = [IS_EMPTY_OR(IS_IMAGE(extensions=('png', 'jpg', 'jpeg'), maxsize=(NEWS_WIDTH, NEWS_HEIGTH),  error_message=T('Image news format (png, jpeg, jpg), maxsize '+str(NEWS_WIDTH)+'x'+str(NEWS_HEIGTH))))]
 
 db.banner.imagen.represent = lambda value, register: A(T('Click here for download or url copy'), _href=URL('default', 'download', args=[value]))
+'''
 
 db.define_table('nivel_atencional',
     Field('nombre', 'string', default='', label=T('Nombre'), comment=T('Atencion enfocada, Sostenida, Selectiva, Alternada, Dividida')),

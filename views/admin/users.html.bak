@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+<h3 class="wow fadeInLeft">{{=T("Gestionar Usuarios")}} </h3>
+
+<hr />
+
+<div class="fadeInDown">
+    {{=grid}}
+</div>

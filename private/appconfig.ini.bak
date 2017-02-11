@@ -1,8 +1,8 @@
 ; App configuration
 [app]
-name        = Welcome
-author      = Your Name <you@example.com>
-description = a cool new app
+name        = Atención
+author      = Enrique Alfonso Carmona <eacarmona860920@gmail.com>
+description = Sistema automatizado para mejorar la atención
 keywords    = web2py, python, framework
 generator   = Web2py Web Framework
 
@@ -20,12 +20,12 @@ pool_size = 10 ; ignored for sqlite
 ; smtp address and credentials
 [smtp]
 server = smtp.gmail.com:587
-sender = you@gmail.com
-login  = username:password
+sender = simeatipn@gmail.com
+login  = simeatipn:s1m34t1pn
 tls    = true
 ssl    = true
 
 ; form styling
 [forms]
-formstyle = bootstrap3_inline
+formstyle = bootstrap3_stacked
 separator =

@@ -1,8 +1,220 @@
 {{extend 'layout.html'}}
 
-{{block header}}
-    {{=LOAD('component', 'show_carousel.load')}}
-    <hr />
-{{end}}
+<h3>Homepage</h3>
 
-<h2>Homepage</h2>
+{{if "Administrador" in auth.user_groups.values():}}
+
+<div class="divider-new">
+    <h4 class="h4-responsive wow fadeInDown">{{=T("Administrador")}}</h4>
+</div
+
+<!--Section: Best features-->
+<section id="best-features">
+    <div class="row">
+        <!--First columnn-->
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'new_admin')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-user"></ico> {{=T("Nuevo Administrador")}}</a>
+        </div>
+        <!--First columnn-->
+
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'new_revisor')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-user"></ico> {{=T("Nuevo Especialista")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'new_student')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-user"></ico> {{=T("Nuevo Estudiante")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'new_user')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.5s"><ico class="glyphicon glyphicon-user"></ico> {{=T("Nuevo Visitante")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'users')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.6s"><ico class="glyphicon glyphicon-user"></ico> {{=T("Nuevo Rol a usuarios")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'centros')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-home"></ico> {{=T("Gestionar Centros")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'logs')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-tasks"></ico> {{=T("Gestionar Logs")}}</a>
+        </div>
+    </div>
+
+</section>
+<!--/Section: Best features-->
+{{pass}}
+
+{{if "Especialista" in auth.user_groups.values():}}
+
+<div class="divider-new">
+    <h4 class="h4-responsive wow fadeInDown">{{=T("Especialista")}}</h4>
+</div>
+
+<!--Section: Best features-->
+<section id="best-features">
+    <div class="row">
+        <h5>{{=T("Diagnóstico Inicial")}}</h5>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('especialista', 'lista_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-th-list"></ico> {{=T("Listado Diagnóstico")}}</a>
+        </div>
+
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('especialista', 'nuevo_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-plus"></ico> {{=T("Nuevo Diagnóstico")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('especialista', 'asignar_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Asignar Diagnóstico")}}</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <h5>{{=T("Mejorar Atención")}}</h5>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('especialista', 'lista_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-th-list"></ico> {{=T("Listado Diagnóstico")}}</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <h5>{{=T("Estadísticas")}}</h5>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('reportes', 'reportes_estadisticas_generales')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Generales")}}</a>
+        </div>
+
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('reportes', 'reportes_estadisticas_personalizadas')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Personalizadas")}}</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <h5>{{=T("Evaluaciones")}}</h5>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('especialista', 'lista_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-th-list"></ico> {{=T("Listado Diagnóstico")}}</a>
+        </div>
+    </div>
+
+</section>
+<!--/Section: Best features-->
+{{pass}}
+
+{{if "Estudiante" in auth.user_groups.values():}}
+
+<div class="divider-new">
+    <h4 class="h4-responsive wow fadeInDown">{{=T("Estudiante")}}</h4>
+</div>
+
+<!--Section: Best features-->
+<section id="best-features">
+    <div class="row">
+        <h5>{{=T("Diagnósticos")}}</h5>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'cuestionario_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Diagnóstico Inicial")}}</a>
+        </div>
+
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'diag_enfocada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Enfocada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'diag_sostenida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Sostenida")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'diag_selectiva')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.5s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Selectiva")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'diag_alternada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.6s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Alternada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'diag_dividida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Selectiva")}}</a>
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <h5>{{=T("Resultados")}}</h5>
+        <!--First columnn-->
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_general')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Resultado General")}}</a>
+        </div>
+
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_enfocada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Enfocada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_sostenida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Sostenida")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_selectiva')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.5s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Selectiva")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_alternada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.6s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Alternada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('estudiante', 'resultado_dividida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Selectiva")}}</a>
+        </div>
+
+    </div>
+
+</section>
+<!--/Section: Best features-->
+{{pass}}
+
+{{if "Visitante" in auth.user_groups.values():}}
+
+<div class="divider-new">
+    <h4 class="h4-responsive wow fadeInDown">{{=T("Visitante")}}</h4>
+</div>
+
+<!--Section: Best features-->
+<section id="best-features">
+    <div class="row">
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'general')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("General")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'enfocada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Enfocada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'sostenida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Sostenida")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'selectiva')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Seletiva")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'alternada')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.5s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Alternada")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('visitante', 'dividida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.6s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Dividida")}}</a>
+        </div>
+        
+    </div>
+
+</section>
+<!--/Section: Best features-->
+{{pass}}

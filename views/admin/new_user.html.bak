@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h3 class="wow fadeInLeft">{{=T("Nuevo Visitante")}}</h3>
+
+<hr />
+
+<div class="wow fadeInDown">
+    {{=form}}
+</div>

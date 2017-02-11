@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> global name 'reponse' is not defined"
+p3
+sS'layer'
+p4
+S'/opt/python/web2py-files/web2py/applications/proyect/controllers/visitante.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# intente algo como\ndef general():\n\n    response.title = T("Estad\xc3\xadsticas Generales") + reponse.title\n    return dict()\n\ndef alternada():\n\n    response.title = T("Atenci\xc3\xb3n Alternada") + reponse.title\n    return dict()\n\ndef dividida():\n\n    response.title = T("Atenci\xc3\xb3n Dividida") + reponse.title\n    return dict()\n\ndef enfocada():\n\n    response.title = T("Atenci\xc3\xb3n Enfocada") + reponse.title\n    return dict()\n\ndef selectiva():\n\n    response.title = T("Atenci\xc3\xb3n Selectiva") + reponse.title\n    return dict()\n\ndef sostenida():\n\n    response.title = T("Atenci\xc3\xb3n Sostenida") + reponse.title\n    return dict()\n\nresponse._vars=response._caller(general)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/opt/python/web2py-files/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/visitante.py", line 33, in <module>\n  File "/opt/python/web2py-files/web2py/gluon/globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/visitante.py", line 5, in general\n    response.title = T("Estad\xc3\xadsticas Generales") + reponse.title\nNameError: global name \'reponse\' is not defined\n'
+p11
+s.

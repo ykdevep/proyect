@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+<h3 class="wow fadeInLeft">{{=T("Gestionar Logs")}} </h3>
+
+<hr />
+
+<div class="wow fadeInUp">
+    {{=grid}}
+</div>

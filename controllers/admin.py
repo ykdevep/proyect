@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
-@auth.requires_membership("Administrador")
-def index():
-    
-    return dict()
-
 
 @auth.requires_membership("Administrador")
 def users():
@@ -23,6 +18,94 @@ def users():
     return dict(grid=grid)
 
 @auth.requires_membership("Administrador")
+def new_admin():
+
+    response.title = T("Nuevo Administrador") + response.title
+
+    form = SQLFORM(db.auth_user)
+
+    if form.validate():
+        group = db(db.auth_group.role == "Administrador").select().first()
+
+        if group:
+            form.vars.id = db.auth_user.insert(**dict(form.vars))
+            db.auth_membership.insert(user_id=form.vars.id, group_id=group.id)
+            response.flash = T('Nuevo Administrador insertado')
+        else:
+            response.flash = T('No hay grupo denominado "Administrador"')
+    elif form.errors:
+        response.flash = T('El formulario tiene errores')
+    else:
+        response.flash = T('Por favor complete el formulario')
+    return dict(form=form)
+
+@auth.requires_membership("Administrador")
+def new_student():
+
+    response.title = T("Nuevo Estudiante") + response.title
+
+    form = SQLFORM(db.auth_user)
+
+    if form.validate():
+        group = db(db.auth_group.role == "Estudiante").select().first()
+
+        if group:
+            form.vars.id = db.auth_user.insert(**dict(form.vars))
+            db.auth_membership.insert(user_id=form.vars.id, group_id=group.id)
+            response.flash = T('Nuevo Estudiante insertado')
+        else:
+            response.flash = T('No hay grupo denominado "Estudiante"')
+    elif form.errors:
+        response.flash = T('El formulario tiene errores')
+    else:
+        response.flash = T('Por favor complete el formulario')
+    return dict(form=form)
+
+@auth.requires_membership("Especialista")
+def new_revisor():
+
+    response.title = T("Nuevo Especialista") + response.title
+
+    form = SQLFORM(db.auth_user)
+
+    if form.validate():
+        group = db(db.auth_group.role == "Especialista").select().first()
+
+        if group:
+            form.vars.id = db.auth_user.insert(**dict(form.vars))
+            db.auth_membership.insert(user_id=form.vars.id, group_id=group.id)
+            response.flash = T('Nuevo Especialista insertado')
+        else:
+            response.flash = T('No hay grupo denominado "Especialista"')
+    elif form.errors:
+        response.flash = T('El formulario tiene errores')
+    else:
+        response.flash = T('Por favor complete el formulario')
+    return dict(form=form)
+
+@auth.requires_membership("Especialista")
+def new_user():
+
+    response.title = T("Nuevo Visitante") + response.title
+
+    form = SQLFORM(db.auth_user)
+
+    if form.validate():
+        group = db(db.auth_group.role == "Visitante").select().first()
+
+        if group:
+            form.vars.id = db.auth_user.insert(**dict(form.vars))
+            db.auth_membership.insert(user_id=form.vars.id, group_id=group.id)
+            response.flash = T('Nuevo Visitante insertado')
+        else:
+            response.flash = T('No hay grupo denominado "Visitante"')
+    elif form.errors:
+        response.flash = T('El formulario tiene errores')
+    else:
+        response.flash = T('Por favor complete el formulario')
+    return dict(form=form)
+
+@auth.requires_membership("Administrador")
 def centros():
     selectable = lambda ids: db(db.centro.id.belongs(ids)).delete()
 
@@ -39,15 +122,13 @@ def centros():
     return dict(grid=grid)
 
 @auth.requires_membership("Administrador")
-def banners():
+def logs():
     selectable = lambda ids: db(db.banner.id.belongs(ids)).delete()
 
-    fields = [db.banner.titulo, db.banner.imagen, db.banner.publicar_en, db.banner.habilitado]
+    grid = SQLFORM.smartgrid(db.auth_event, selectable=selectable, linked_tables=[], exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))
 
-    grid = SQLFORM.smartgrid(db.banner, selectable=selectable, linked_tables=[], exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))
-
-    response.flash = T("Administrar banners")
-    response.title = T("Administrar Banners") + response.title
+    response.flash = T("Administrar logs")
+    response.title = T("Administrar logs") + response.title
 
     heading=grid.elements('th')
     if heading:
