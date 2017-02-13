@@ -57,17 +57,17 @@
 <!--Section: Best features-->
 <section id="best-features">
     <div class="row">
-        <h5>{{=T("Diagnóstico Inicial")}}</h5>
-        <div class="col-md-3">
+        <h5>{{=T("Diagnósticos")}}</h5>
+        <div class="col-md-4">
             <!--Card-->
-            <a href="{{=URL('especialista', 'lista_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-th-list"></ico> {{=T("Listado Diagnóstico")}}</a>
+            <a href="{{=URL('especialista', 'gestionar_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-th-list"></ico> {{=T("Gestionar Diagnóstico")}}</a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
             <!--Card-->
-            <a href="{{=URL('especialista', 'nuevo_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-plus"></ico> {{=T("Nuevo Diagnóstico")}}</a>
+            <a href="{{=URL('especialista', 'nuevo_diagnostico_inicial')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-plus"></ico> {{=T("Nuevo Diagnóstico Inicial")}}</a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <!--Card-->
             <a href="{{=URL('especialista', 'asignar_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.4s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Asignar Diagnóstico")}}</a>
         </div>
@@ -85,12 +85,12 @@
         <h5>{{=T("Estadísticas")}}</h5>
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('reporte', 'reportes_estadisticas_generales')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Generales")}}</a>
+            <a href="{{=URL('reportes', 'reportes_estadisticas_generales')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Generales")}}</a>
         </div>
 
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('reporte', 'reportes_estadisticas_personalizadas')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Personalizadas")}}</a>
+            <a href="{{=URL('reportes', 'reportes_estadisticas_personalizadas')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s"><ico class="glyphicon glyphicon-list-alt"></ico> {{=T("Estadísticas Personalizadas")}}</a>
         </div>
     </div>
     
@@ -170,7 +170,7 @@
         </div>
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('estudiante', 'resultado_dividida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Selectiva")}}</a>
+            <a href="{{=URL('estudiante', 'resultado_dividida')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Atención Dividida")}}</a>
         </div>
 
     </div>

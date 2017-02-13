@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'NoneType' object has no attribute 'update_record'"
+p3
+sS'layer'
+p4
+S'/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# this file is released under public domain and you can use without limitations\n\ndef __activo(flag):\n    \'\'\'\n    Funci\xc3\xb3n que devuelve un ayudante\n    \'\'\'\n    if flag:\n        return A(XML(\'<i class="glyphicon glyphicon-ok"></i> \'), _class="btn btn-danger", **{\'_data-toggle\': "tooltip", \'_title\': T("Cuestionario diagn\xc3\xb3stico activo"), \'_data-placement\': "top"})\n    else:\n        return A(XML(\'<i class="glyphicon glyphicon-remove"></i> \'), _class="btn btn-info", _href=URL(args=request.args, vars=dict(is_active=True), user_signature=True, hash_vars=False),**{\'_data-toggle\': "tooltip", \'_title\': T("Cuestionario diagn\xc3\xb3stico desactivado (click para activar)"), \'_data-placement\': "top"})\n\n@auth.requires_membership("Especialista")\ndef lista_diagnostico():\n\n    links = []\n\n    selectable = lambda ids: db(db.diagnostico_inicial.id.belongs(ids)).delete()\n\n    links.append({\'header\': T(\'Activo\'), \'body\': lambda row: __activo(row.is_active)})\n\n    if "is_active" in request.vars:\n        diagnostico = db.diagnostico_inicial(request.args[-1])\n        diagnostico.update_record(is_active=True)\n\n    grid = SQLFORM.smartgrid(db.diagnostico_inicial, selectable=selectable, create=False, linked_tables=[], links=links, exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))\n\n    response.flash = T("Listado de Diagn\xc3\xb3stico")\n    response.title = T("Listado de Diagn\xc3\xb3stico") + response.title\n\n    heading=grid.elements(\'th\')\n    if heading:\n           heading[0].append(INPUT(_type=\'checkbox\', _onclick="jQuery(\'input[type=checkbox]\').each(function(k){jQuery(this).attr(\'checked\', \'checked\');});"))\n    return dict(grid=grid)\n\n@auth.requires_membership("Especialista")\ndef nuevo_diagnostico():\n    response.flash = T("Nuevo Diagn\xc3\xb3stico")\n    response.title = T("Nuevo Diagn\xc3\xb3stico") + response.title\n\n    form = SQLFORM(db.diagnostico_inicial)\n\n    if form.validate():\n        form.vars.id = db.diagnostico_inicial.insert(**dict(form.vars))\n\n        response.flash = T(\'Nuevo cuestionario Diagn\xc3\xb3stico Inicial insertado\')\n\n    elif form.errors:\n        response.flash = T(\'El formulario tiene errores\')\n    else:\n        response.flash = T(\'Por favor complete el formulario\')\n    return dict(form=form)\n\n@auth.requires_membership("Especialista")\ndef asignar_diagnostico():\n    response.flash = T("Asignar Diagn\xc3\xb3stico")\n    response.title = T("Asignar Diagn\xc3\xb3stico") + response.title\n    return dict()\n\nresponse._vars=response._caller(lista_diagnostico)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/opt/python/web2py-files/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py", line 60, in <module>\n  File "/opt/python/web2py-files/web2py/gluon/globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "/opt/python/web2py-files/web2py/gluon/tools.py", line 4241, in f\n    return action(*a, **b)\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py", line 24, in lista_diagnostico\n    diagnostico.update_record(is_active=True)\nAttributeError: \'NoneType\' object has no attribute \'update_record\'\n'
+p11
+s.

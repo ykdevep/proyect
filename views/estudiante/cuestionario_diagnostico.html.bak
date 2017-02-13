@@ -1,1 +1,39 @@
 {{extend 'layout.html'}}
+
+{{if diagnostico:}}
+    {{loader = DIV(DIV(DIV(IMG(_src=URL("static","img/loader.gif"), _width="40%"), _class="col-md-5 col-md-offset-5"), _class="row"), _class="container")}}
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>{{=diagnostico.titulo}}</h4>
+            <p>{{=diagnostico.descripcion}}</p>
+        </div>
+        <div class="col-md-6">
+            <h5>{{=CAT(auth.user.first_name, ' ',auth.user.last_name)}}</h5>
+            <h6>{{=CAT(T('Fecha de nacimiento:'), ' ', auth.user.fecha_nacimiento)}}</h6>
+            <h6>{{=CAT(T('Edad:'), ' ', int((request.now.date()-auth.user.fecha_nacimiento).days / 365.25 ))}}</h6>
+        </div>
+    </div>
+    <section id="diagnostico">
+        <div class="row">
+            <div class="col-md-12">
+                {{=LOAD("estudiante", 'visor_preguntas.load', args=[diagnostico.id], user_signature=True, ajax=True, content=loader)}}
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </section>
+
+{{else:}}
+    <h2 class="wow fadeInLeft" data-wow-delay="0.3s">{{=T('No hay Cuestionario Diagnóstico Inicial Activo')}}</h2>
+{{pass}}
+
+{{block head}}
+    <style>
+        #diagnostico {
+            padding: 10px;
+            background-color: #c6ea98;
+            min-height: 600px;
+        }
+    </style>
+{{end}}

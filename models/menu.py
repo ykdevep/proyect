@@ -61,16 +61,15 @@ def _():
             ("logs", False, A(CAT(XML('<ico class="glyphicon glyphicon-tasks"></ico> '), T('Administrar logs')), _href=URL("admin", "logs"), **{'_data-target': "#logs"}))]
         )]
     if (auth.has_membership('Especialista')):
-        response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnóstico Inicial')), False, URL(), [
-            ("lista_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-th-list"></ico> '), T('Lista Diagnóstico')), _href=URL("especialista", "lista_diagnostico"), **{'_data-target': "#lista_diagnostico"})),
-            ("nuevo_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-plus"></ico> '), T('Nuevo Diagnóstico')), _href=URL("especialista", "nuevo_diagnostico"), **{'_data-target': "#nuevo_diagnostico"})),
-            ("asignar_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-list-alt"></ico> '), T('Asignar Diagnóstico')), _href=URL("especialista", "asignar_diagnostico"), **{'_data-target': "#asignar_diagnostico"})),
+        response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnóstico')), False, URL(), [
+            ("gestionar_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-th-list"></ico> '), T('Gestionar Diagnósticos')), _href=URL("especialista", "gestionar_diagnostico"), **{'_data-target': "#gestionar_diagnostico"})),
+            ("nuevo_diagnostico_inicial", False, A(CAT(XML('<ico class="glyphicon glyphicon-plus"></ico> '), T('Nuevo Diagnóstico Inicial')), _href=URL("especialista", "nuevo_diagnostico_inicial"), **{'_data-target': "#nuevo_diagnostico_inicial"})),
+
             ]
         )]
-        
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Mejorar Atención')), False, URL(), []
         )]
-        
+
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Estadísticas')), False, URL(), [
             ("reportes_estadisticas_generales", False, A(CAT(XML('<ico class="glyphicon glyphicon-list-alt"></ico> '), T('Reportes de estadísticas generales')), _href=URL("reportes", "reportes_estadisticas_generales"), **{'_data-target': "#reportes_estadisticas_generales"})),
             ("reportes_estadisticas_personalizadas", False, A(CAT(XML('<ico class="glyphicon glyphicon-list-alt"></ico> '), T('Reportes de estadísticas personalizadas')), _href=URL("reportes", "reportes_estadisticas_personalizadas"), **{'_data-target': "#reportes_estadisticas_personalizadas"}))]

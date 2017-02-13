@@ -1,0 +1,151 @@
+{{extend 'layout.html'}}
+
+<h3 class="wow fadeInLeft">{{=mensaje}} </h3>
+
+<hr />
+
+{{if diagnostico:}}
+    <div class="col-md-7">
+        {{=grid}}
+    </div>
+    <div class="col-md-5">
+        <section class="wow fadeInUp" style="background-color: #E39E9666; padding: 10px;">
+            {{def activo(flag):
+                if flag:
+                    return CAT(A(XML('<ico class="glyphicon glyphicon-ok"></ico>'), T("Activo")), _class="success")
+                else:
+                    return CAT(A(XML('<ico class="glyphicon glyphicon-remove"></ico>'), T("Activo")))
+                pass
+
+
+              def __formato_ensayo(datos, clase):
+                '''
+                Formato de preguntas y respuestas ejemplo (1,2|,4,5,4|7,8,4,1%2,3|9,0,1|3,1,8,7) símbolo % divide los ensayos, símbolo | divide las juegos de datos o respuestas series
+                '''
+
+                if datos:
+                    ensayos = datos.split('%')
+                    if ensayos:
+                        ul = UL(_class="nav")
+                        i = 1
+
+                        for ensayo in ensayos:
+                            ul.append(LI(CAT(T("Ensayo #:"), ' ', i)))
+                            ul.append(UL(ensayo.split('|'), _class="nav "+clase))
+                            i=i+1
+                        pass
+
+                        return ul
+                    else:
+                        return UL(LI(T("No tiene juego de respuestas")), _class="nav "+clase)
+                    pass
+                
+                pass
+            }}
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    {{=H5(diagnostico.titulo, _title=diagnostico.descripcion, **{'_data-toggle': "tooltip", '_data-placement': "left"})}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{=H6(CAT(T("Cuestionario diagnóstico:"), ' ', A(tipo_diagnostico[diagnostico.tipo])))}}
+                </div>
+                <div class="col-md-6">
+                    {{=H6(CAT(activo(diagnostico.activo)))}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr />
+                </div>
+            </div>
+            {{
+                i = 1
+                evaluacion = 0
+            }}
+            {{for pregunta in preguntas:}}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>{{=i}}.) {{=tipo_pregunta[pregunta.tipo]}}</h6>
+                        <h7>{{=pregunta.descripcion}}</h7>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <ul class="nav pregunta">
+
+                           {{=LI(H6(T('Juego de datos')))}}
+                           {{=__formato_ensayo(pregunta.juego_datos, "pregunta")}}
+
+                        </ul>
+                    </div>
+                {{if pregunta.juego_respuestas:}}
+                    <div class="col-md-5 col-md-offset-1">
+                        <ul class="nav pregunta">
+                           {{=LI(H6(T('Juego de Respuestas')))}}
+                           {{=__formato_ensayo(pregunta.juego_respuestas, "respuesta")}}
+                        </ul>
+                    </div>
+                {{pass}}
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <h6>{{=T("Intentos:")}} {{= pregunta.intentos}}</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>{{=CAT(T("Total:"), ' ',pregunta.puntos)}}</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>{{=T("Tiempo:")}} {{=pregunta.tiempo}} (s)</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr />
+                    </div>
+                </div>
+            {{
+                i=i+1
+                evaluacion = evaluacion + pregunta.puntos
+            }}
+            {{pass}}
+            <div class="row">
+                <div class="col-md-9 col-md-offset-3">
+                    {{=H5(CAT(T("Evaluación de Diagnóstico: "), evaluacion, ' ', T("ptos")))}}
+                </div>
+            </div>
+        </section>
+    </div>
+{{else:}}
+    <div class="col-md-12">
+        {{=grid}}
+    </div>
+{{pass}}
+
+{{block head}}
+    <style>
+        .pregunta > li {
+            color: rgba(149, 67, 6, 0.73);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .respuesta > li {
+            color: rgba(84, 147, 26, 0.91);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+    </style>
+{{end}}
+
+{{block page_js}}
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+{{end}}

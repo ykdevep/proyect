@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.KeyError'> "
+p3
+sS'layer'
+p4
+S'/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# this file is released under public domain and you can use without limitations\ndef listado_preguntas():\n    if request.cid:\n\n        preguntas = []\n\n        if request.vars.diagnostico:\n            diagnostico = db.diagnostico(request.vars.diagnostico)\n            if diagnostico:\n                preguntas = diagnostico.pregunta\n            else:\n                raise HTTP(403)\n        else:\n            raise HTTP(502)\n\n        fields = [db.pregunta.texto, db.pregunta.respuesta, db.pregunta.tipo, db.pregunta.puntos]\n\n        preguntas = db(db.pregunta.id.belongs(preguntas)).select()\n\n        response.headers[\'web2py-component-flash\']=T("Listado de preguntas")\n        return dict(preguntas=preguntas)\n    else:\n        raise HTTP(403)\n\n@auth.requires_membership("Especialista")\ndef gestionar_diagnostico():\n    \'\'\'\n    CRUD completo para gestionar diagnosticos kike tiene que ser asi\n    \'\'\'\n\n    diagnostico = None\n\n    if "pregunta.diagnostico" in request.args:\n        response.title = T(\'Asignar preguntas al diagn\xc3\xb3stico\') + response.title\n        response.flash = T(\'Asignar preguntas al diagn\xc3\xb3stico\')\n        mensaje = T(\'Asignar pregunta a diagn\xc3\xb3stico con identificador: \') + request.args(-1)\n        diagnostico = db.diagnostico(request.args(-1))\n        selectable = lambda ids: db(db.pregunta.id.belongs(ids)).delete()\n        orderby = [db.pregunta.tipo]\n    else:\n        response.title = T(\'Gestionar Diagn\xc3\xb3sticos\') + response.title\n        response.flash = T(\'Gestionar Diagn\xc3\xb3sticos\')\n        mensaje = T(\'Gestionar Diagn\xc3\xb3sticos\')\n        selectable = lambda ids: db(db.diagnostico.id.belongs(ids)).delete()\n        orderby = [db.diagnostico.tipo|~db.diagnostico.activo]\n\n    grid = SQLFORM.smartgrid(db.diagnostico, selectable=selectable, orderby=None)\n\n    heading=grid.elements(\'th\')\n    if heading:\n           heading[0].append(INPUT(_type=\'checkbox\', _onclick="jQuery(\'input[type=checkbox]\').each(function(k){jQuery(this).attr(\'checked\', \'checked\');});"))\n\n    return dict(grid=grid, mensaje=mensaje, diagnostico=None)\n\n@auth.requires_membership("Especialista")\ndef nuevo_diagnostico_inicial():\n    response.flash = T("Nuevo Diagn\xc3\xb3stico Inicial")\n    response.title = T("Nuevo Diagn\xc3\xb3stico Inicial") + response.title\n\n    form = SQLFORM(db.diagnostico, fields=[\'titulo\', \'descripcion\', \'activo\'])\n\n    if form.validate():\n        diagnostico = dict(form.vars)\n        diagnostico[\'tipo\'] = 0\n        form.vars.id = db.diagnostico.insert(**diagnostico)\n\n        response.flash = T(\'Nuevo cuestionario Diagn\xc3\xb3stico Inicial insertado\')\n\n    elif form.errors:\n        response.flash = T(\'El formulario tiene errores\')\n    else:\n        response.flash = T(\'Por favor complete el formulario\')\n    return dict(form=form)\n\nresponse._vars=response._caller(gestionar_diagnostico)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/opt/python/web2py-files/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py", line 76, in <module>\n  File "/opt/python/web2py-files/web2py/gluon/globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "/opt/python/web2py-files/web2py/gluon/tools.py", line 4241, in f\n    return action(*a, **b)\n  File "/opt/python/web2py-files/web2py/applications/proyect/controllers/especialista.py", line 48, in gestionar_diagnostico\n    grid = SQLFORM.smartgrid(db.diagnostico, selectable=selectable, orderby=None)\n  File "/opt/python/web2py-files/web2py/gluon/sqlhtml.py", line 3120, in smartgrid\n    grid.view_form.record))\n  File "/opt/python/web2py-files/web2py/gluon/sqlhtml.py", line 2982, in format\n    return table._format % row\n  File "/opt/python/web2py-files/web2py/gluon/packages/dal/pydal/objects.py", line 76, in __getitem__\n    raise KeyError\nKeyError\n'
+p11
+s.

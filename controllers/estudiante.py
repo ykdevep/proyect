@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
+def visor_preguntas():
+    '''
+    Implementación de un visor de preguntas de un diagnóstico dado
+    '''
+    if request.cid:
 
+        diagnostico = db.diagnostico(request.args(0))
+
+        return dict(diagnostico=diagnostico)
+    else:
+        raise HTTP(403)
+
+@auth.requires_membership("Estudiante")
 def cuestionario_diagnostico():
     response.flash = T("Cuestionario de diagnóstico")
     response.title = T("Cuestionario de diagnóstico") + response.title
-    return dict()
+
+    diagnostico = db((db.diagnostico.activo == True) & (db.diagnostico.tipo == 0)).select().first()
+
+    return dict(diagnostico=diagnostico)
 
 def diag_alternada():
 

@@ -1,0 +1,1 @@
+<p>{{=diagnostico.pregunta.select()}}</p>

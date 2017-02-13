@@ -1,0 +1,818 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> __call__() takes at least 2 arguments (1 given)"
+p3
+sS'layer'
+p4
+S'/opt/python/web2py-files/web2py/applications/proyect/views/especialista/listado_cuestionario_diagnostico.load'
+p5
+sS'code'
+p6
+S"response.write(grid)\nresponse.write('\\n\\n', escape=False)\nresponse.write(request.args())\nresponse.write('\\n\\n<style>\\n    .w2p_export_menu {\\n        visibility: hidden;\\n    }\\n</style>\\n', escape=False)"
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.TypeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.TypeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.TypeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.TypeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.TypeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.TypeError object>'
+p23
+sS'args'
+p24
+S"('__call__() takes at least 2 arguments (1 given)',)"
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.TypeError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.TypeError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.TypeError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.TypeError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.TypeError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.TypeError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.TypeError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.TypeError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.TypeError object>'
+p47
+sS'__doc__'
+p48
+S"'Inappropriate argument type.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.TypeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S'__call__() takes at least 2 arguments (1 given)'
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's#\x8f\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>proyect</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>c0720966884854</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>especialista</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_proyect</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>_ga=GA1.1.648974235.1473547908; session_id_proyect=127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933; session_id_admin=127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195; session_id_welcome=127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://localhost:8000/proyect/especialista/nuevo_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/proyect/especialista/lista_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>55622</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>yasmany-tp500lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/opt/python/web2py-files/web2py/applications/observatorio/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrfv14/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/proyect/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/admin/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrf/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f5d84d67320: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;observatorio&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>_ga=GA1.1.648974235.1473547908; session_id_proyect=127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933; session_id_admin=127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195; session_id_welcome=127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://localhost:8000/proyect/especialista/nuevo_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_web2py_component_element</td><td style="vertical-align:top;">:</td><td><div>c0720966884854</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_web2py_component_location</td><td style="vertical-align:top;">:</td><td><div>/proyect/especialista/lista_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>yasmany-tp500lab</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>yasmany-TP500LAB</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/proyect/especialista/listado_cuestionario_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>55622</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/proyect/especialista/lista_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>yasmany-tp500lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f5d89a561e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f5d84dffe88&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f5d3d044450&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f5d89a561e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f5d84dffe88&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f5d3d044450&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>load</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py/applications/proyect/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>listado_cuestionario_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">get_vars</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">records</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/opt/python/web2py-files/web2py/applications/observatorio/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrfv14/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/proyect/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/admin/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrf/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f5d84d67320: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;observatorio&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/opt/python/web2py-files/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>yasmany-tp500lab</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>yasmany-TP500LAB</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 2, 11, 22, 42, 1, 140466)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">post_vars</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">restful</td><td style="vertical-align:top;">:</td><td><div>&lt;bound method ?.restful of &lt;Storage {&#x27;_vars&#x27;: None, &#x27;function&#x27;: &#x27;listado_cuestionario_diagnostico&#x27;, &#x27;cookies&#x27;: &lt;SimpleCookie: _ga=&#x27;GA1.1.648974235.1473547908&#x27; session_id_admin=&#x27;127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195&#x27; session_id_proyect=&#x27;127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933&#x27; session_id_welcome=&#x27;127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab&#x27;&gt;, &#x27;args&#x27;: [], &#x27;env&#x27;: &lt;Storage {&#x27;HTTP_REFERER&#x27;: &#x27;http://localhost:8000/proyect/especialista/nuevo_diagnostico&#x27;, &#x27;SERVER_SOFTWARE&#x27;: &#x27;Rocket 1.2.6&#x27;, &#x27;SCRIPT_NAME&#x27;: &#x27;&#x27;, &#x27;REQUEST_METHOD&#x27;: &#x27;GET&#x27;, &#x27;SERVER_PROTOCOL&#x27;: &#x27;HTTP/1.1&#x27;, &#x27;http_cache_control&#x27;: &#x27;max-age=0&#x27;, &#x27;web2py_path&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;wsgi_url_scheme&#x27;: &#x27;http&#x27;, &#x27;REMOTE_PORT&#x27;: &#x27;55622&#x27;, &#x27;server_name&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;applications_parent&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;cmd_options&#x27;: &lt;Values at 0x7f5d84d67320: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;, &#x27;wsgi_errors&#x27;: &lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f5d89a561e0&gt;, &#x27;request_method&#x27;: &#x27;GET&#x27;, &#x27;SERVER_PORT&#x27;: &#x27;8000&#x27;, &#x27;http_upgrade_insecure_requests&#x27;: &#x27;1&#x27;, &#x27;wsgi_multithread&#x27;: True, &#x27;web2py_version&#x27;: &#x27;2.14.6-stable+timestamp.2016.05.10.00.21.47&#x27;, &#x27;HTTP_HOST&#x27;: &#x27;localhost:8000&#x27;, &#x27;wsgi_multiprocess&#x27;: False, &#x27;HTTP_UPGRADE_INSECURE_REQUESTS&#x27;: &#x27;1&#x27;, &#x27;HTTP_CACHE_CONTROL&#x27;: &#x27;max-age=0&#x27;, &#x27;request_uri&#x27;: &#x27;/proyect/especialista/lista_diagnostico&#x27;, &#x27;HTTP_ACCEPT&#x27;: &#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;, &#x27;http_web2py_component_location&#x27;: &#x27;/proyect/especialista/lista_diagnostico&#x27;, &#x27;wsgi.version&#x27;: (1, 0), &#x27;local_hosts&#x27;: [&#x27;yasmany-tp500lab&#x27;, &#x27;127.0.1.1&#x27;, &#x27;::ffff:127.0.0.1&#x27;, &#x27;::1&#x27;, &#x27;yasmany-TP500LAB&#x27;, &#x27;127.0.0.1&#x27;], &#x27;wsgi.run_once&#x27;: False, &#x27;script_name&#x27;: &#x27;&#x27;, &#x27;wsgi.multiprocess&#x27;: False, &#x27;HTTP_ACCEPT_LANGUAGE&#x27;: &#x27;en-US,en;q=0.5&#x27;, &#x27;wsgi_input&#x27;: &lt;socket._fileobject object at 0x7f5d3d044450&gt;, &#x27;app_folders&#x27;: set([&#x27;/opt/python/web2py-files/web2py/applications/observatorio/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrfv14/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/proyect/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/admin/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrf/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/welcome/&#x27;]), &#x27;http_connection&#x27;: &#x27;keep-alive&#x27;, &#x27;remote_port&#x27;: &#x27;55622&#x27;, &#x27;wsgi.errors&#x27;: &lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f5d89a561e0&gt;, &#x27;debugging&#x27;: True, &#x27;http_user_agent&#x27;: &#x27;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0&#x27;, &#x27;HTTP_COOKIE&#x27;: &#x27;_ga=GA1.1.648974235.1473547908; session_id_proyect=127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933; session_id_admin=127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195; session_id_welcome=127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab&#x27;, &#x27;PATH_INFO&#x27;: &#x27;/proyect/especialista/lista_diagnostico&#x27;, &#x27;server_protocol&#x27;: &#x27;HTTP/1.1&#x27;, &#x27;QUERY_STRING&#x27;: &#x27;&#x27;, &#x27;cmd_args&#x27;: [], &#x27;http_accept&#x27;: &#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;, &#x27;HTTP_USER_AGENT&#x27;: &#x27;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0&#x27;, &#x27;HTTP_CONNECTION&#x27;: &#x27;keep-alive&#x27;, &#x27;SERVER_NAME&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;remote_addr&#x27;: &#x27;127.0.0.1&#x27;, &#x27;is_jython&#x27;: False, &#x27;http_accept_language&#x27;: &#x27;en-US,en;q=0.5&#x27;, &#x27;wsgi_version&#x27;: (1, 0), &#x27;wsgi.url_scheme&#x27;: &#x27;http&#x27;, &#x27;is_source&#x27;: True, &#x27;server_port&#x27;: &#x27;8000&#x27;, &#x27;http_accept_encoding&#x27;: &#x27;gzip, deflate&#x27;, &#x27;http_cookie&#x27;: &#x27;_ga=GA1.1.648974235.1473547908; session_id_proyect=127.0.0.1-7d3f437b-e65a-4bf9-ab7c-c8fe7ebfd933; session_id_admin=127.0.0.1-4c23eac5-6655-44e8-a5ae-06af47a6f195; session_id_welcome=127.0.0.1-c6bce098-1af6-443d-975b-547f88a133ab&#x27;, &#x27;gluon_parent&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;server_software&#x27;: &#x27;Rocket 1.2.6&#x27;, &#x27;http_web2py_component_element&#x27;: &#x27;c0720966884854&#x27;, &#x27;wsgi.input&#x27;: &lt;socket._fileobject object at 0x7f5d3d044450&gt;, &#x27;http_host&#x27;: &#x27;localhost:8000&#x27;, &#x27;path_info&#x27;: &#x27;/proyect/especialista/listado_cuestionario_diagnostico&#x27;, &#x27;wsgi.multithread&#x27;: True, &#x27;wsgi_file_wrapper&#x27;: &lt;class wsgiref.util.FileWrapper at 0x7f5d84dffe88&gt;, &#x27;is_pypy&#x27;: False, &#x27;REMOTE_ADDR&#x27;: &#x27;127.0.0.1&#x27;, &#x27;db_sessions&#x27;: set([&#x27;observatorio&#x27;]), &#x27;http_referer&#x27;: &#x27;http://localhost:8000/proyect/especialista/nuevo_diagnostico&#x27;, &#x27;query_string&#x27;: &#x27;&#x27;, &#x27;wsgi_run_once&#x27;: False, &#x27;wsgi.file_wrapper&#x27;: &lt;class wsgiref.util.FileWrapper at 0x7f5d84dffe88&gt;, &#x27;HTTP_ACCEPT_ENCODING&#x27;: &#x27;gzip, deflate&#x27;}&gt;, &#x27;vars&#x27;: &lt;Storage {&#x27;records&#x27;: []}&gt;, &#x27;global_settings&#x27;: &lt;Storage {&#x27;debugging&#x27;: True, &#x27;is_pypy&#x27;: False, &#x27;local_hosts&#x27;: [&#x27;yasmany-tp500lab&#x27;, &#x27;127.0.1.1&#x27;, &#x27;::ffff:127.0.0.1&#x27;, &#x27;::1&#x27;, &#x27;yasmany-TP500LAB&#x27;, &#x27;127.0.0.1&#x27;], &#x27;is_source&#x27;: True, &#x27;gluon_parent&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;is_jython&#x27;: False, &#x27;applications_parent&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;cmd_options&#x27;: &lt;Values at 0x7f5d84d67320: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;yasmany-tp500lab&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/opt/python/web2py-files/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;, &#x27;app_folders&#x27;: set([&#x27;/opt/python/web2py-files/web2py/applications/observatorio/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrfv14/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/proyect/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/admin/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/cvrf/&#x27;, &#x27;/opt/python/web2py-files/web2py/applications/welcome/&#x27;]), &#x27;db_sessions&#x27;: set([&#x27;observatorio&#x27;]), &#x27;web2py_version&#x27;: &#x27;2.14.6-stable+timestamp.2016.05.10.00.21.47&#x27;, &#x27;cmd_args&#x27;: []}&gt;, &#x27;raw_extension&#x27;: None, &#x27;_body&#x27;: None, &#x27;_uuid&#x27;: None, &#x27;raw_args&#x27;: &#x27;&#x27;, &#x27;controller&#x27;: &#x27;especialista&#x27;, &#x27;application&#x27;: &#x27;proyect&#x27;, &#x27;utcnow&#x27;: datetime.datetime(2017, 2, 12, 3, 42, 1, 140484), &#x27;now&#x27;: datetime.datetime(2017, 2, 11, 22, 42, 1, 140466), &#x27;is_local&#x27;: True, &#x27;wsgi&#x27;: &lt;gluon.main.LazyWSGI object at 0x7f5d7c05a750&gt;, &#x27;is_shell&#x27;: False, &#x27;extension&#x27;: &#x27;load&#x27;, &#x27;cid&#x27;: &#x27;c0720966884854&#x27;, &#x27;url&#x27;: &#x27;/proyect/especialista/lista_diagnostico&#x27;, &#x27;_get_vars&#x27;: &lt;Storage {}&gt;, &#x27;ajax&#x27;: False, &#x27;is_https&#x27;: False, &#x27;_post_vars&#x27;: None, &#x27;client&#x27;: &#x27;127.0.0.1&#x27;, &#x27;is_restful&#x27;: False, &#x27;is_scheduler&#x27;: False, &#x27;get_vars&#x27;: &lt;Storage {&#x27;records&#x27;: []}&gt;, &#x27;folder&#x27;: &#x27;/opt/python/web2py-files/web2py/applications/proyect/&#x27;, &#x27;restful&#x27;: &lt;bound method ?.restful of &lt;Storage {...}&gt;&gt;, &#x27;post_vars&#x27;: &lt;Storage {}&gt;}&gt;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/proyect/especialista/lista_diagnostico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 2, 12, 3, 42, 1, 140484)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">vars</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">records</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7f5d7c05a750&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/opt/python/web2py-files/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x7f5d3d04df30, file "/...a/listado_cuestionario_diagnostico.load", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code="response.write(grid)\\nresponse.write(\'\\\\n\\\\n\', esca...ility: hidden;\\\\n    }\\\\n</style>\\\\n\', escape=False)", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=\'/opt/python/web2py-files/web2py/applications/pro...specialista/listado_cuestionario_diagnostico.load\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/opt/python/web2py-files/web2py/applications/proyect/views/especialista/listado_cuestionario_diagnostico.load'
+p88
+sg64
+(dp89
+S'request.args'
+p90
+S'[]'
+p91
+sS'request'
+p92
+S"<Storage {'_vars': None, 'function': 'listado_cu... of <Storage {...}>>, 'post_vars': <Storage {}>}>"
+p93
+ssg70
+I3
+sg71
+(dp94
+I1
+S'{{=grid}}'
+p95
+sI2
+S''
+sI3
+S'{{=request.args()}}'
+p96
+sI4
+S''
+sI5
+S'<style>'
+p97
+sI6
+S'    .w2p_export_menu {'
+p98
+sI7
+S'        visibility: hidden;'
+p99
+sI8
+S'    }'
+p100
+sI9
+S'</style>'
+p101
+ssg83
+S'()'
+p102
+sg85
+S'<module>'
+p103
+sasS'pyver'
+p104
+S'Python 2.7.12: /usr/bin/python (prefix: /usr)'
+p105
+sS'session'
+p106
+g57
+(S's3\t\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>91c080b5-baea-4798-a01a-4e550347bd47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 2, 11, 22, 38, 16, 880819)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>especialista@upr.edu.cu</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Especialista</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>27427756312748366090444997323L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>asdfe</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">27427755648665579436901139144</td><td style="vertical-align:top;">:</td><td><div>Especialista</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp107
+sS'etype'
+p108
+S"<type 'exceptions.TypeError'>"
+p109
+sS'date'
+p110
+S'Sat Feb 11 22:42:01 2017'
+p111
+sS'response'
+p112
+g57
+(S's\x9b\t\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7f5d440a14c8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>Listado de Diagn\xc3\xb3stico</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>especialista/listado_cuestionario_diagnostico.load</div></td></tr></table></div>'
+tRp113
+sS'locals'
+p114
+(dp115
+S'Service'
+p116
+S"<class 'gluon.tools.Service'>"
+p117
+sS'OBJECT'
+p118
+S"<class 'gluon.html.OBJECT'>"
+p119
+sS'SQLDB'
+p120
+S"<class 'pydal.base.DAL'>"
+p121
+sg106
+S"<Storage {'auth': <Storage {'remember_me': False...ature=9b7e430361d51be5f0edab9eb2ea6f82956281d7'}>"
+p122
+sS'LINK'
+p123
+S"<class 'gluon.html.LINK'>"
+p124
+sS'BR'
+p125
+S"<class 'gluon.html.BR'>"
+p126
+sS'local_import'
+p127
+S'<function <lambda>>'
+p128
+sS'OPTGROUP'
+p129
+S"<class 'gluon.html.OPTGROUP'>"
+p130
+sS'__package__'
+p131
+S'None'
+p132
+sS'OPTION'
+p133
+S"<class 'gluon.html.OPTION'>"
+p134
+sS'PRE'
+p135
+S"<class 'gluon.html.PRE'>"
+p136
+sS'IS_INT_IN_RANGE'
+p137
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p138
+sS'IS_LOWER'
+p139
+S"<class 'gluon.validators.IS_LOWER'>"
+p140
+sS'IS_STRONG'
+p141
+S"<class 'gluon.validators.IS_STRONG'>"
+p142
+sS'cache'
+p143
+S'<gluon.cache.Cache object>'
+p144
+sS'IS_IN_DB'
+p145
+S"<class 'gluon.validators.IS_IN_DB'>"
+p146
+sS'TAG'
+p147
+S'<gluon.html.__TAG__ object>'
+p148
+sS'SQLField'
+p149
+S"<class 'pydal.objects.Field'>"
+p150
+sS'mail'
+p151
+S'<gluon.tools.Mail object>'
+p152
+sS'BODY'
+p153
+S"<class 'gluon.html.BODY'>"
+p154
+sS'IS_DATE_IN_RANGE'
+p155
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p156
+sS'IFRAME'
+p157
+S"<class 'gluon.html.IFRAME'>"
+p158
+sS'URL'
+p159
+S'<function URL>'
+p160
+sS'__file__'
+p161
+S"'/opt/python/web2py-files/web2py/applications/pro...specialista/listado_cuestionario_diagnostico.load'"
+p162
+sS'db'
+p163
+S'<DAL uri="mongodb://localhost/proyect">'
+p164
+sS'auth'
+p165
+S'<gluon.tools.Auth object>'
+p166
+sS'P'
+S"<class 'gluon.html.P'>"
+p167
+sS'grid'
+p168
+S'<gluon.html.DIV object>'
+p169
+sS'TFOOT'
+p170
+S"<class 'gluon.html.TFOOT'>"
+p171
+sS'XHTML'
+p172
+S"<class 'gluon.html.XHTML'>"
+p173
+sS'ON'
+p174
+S'True'
+p175
+sS'OL'
+p176
+S"<class 'gluon.html.OL'>"
+p177
+sS'TEXTAREA'
+p178
+S"<class 'gluon.html.TEXTAREA'>"
+p179
+sS'MENU'
+p180
+S"<class 'gluon.html.MENU'>"
+p181
+sS'IS_IMAGE'
+p182
+S"<class 'gluon.validators.IS_IMAGE'>"
+p183
+sS'EM'
+p184
+S"<class 'gluon.html.EM'>"
+p185
+sS'CODE'
+p186
+S"<class 'gluon.html.CODE'>"
+p187
+sS'HTTP'
+p188
+S"<class 'gluon.http.HTTP'>"
+p189
+sS'HR'
+p190
+S"<class 'gluon.html.HR'>"
+p191
+sS'IS_DATETIME'
+p192
+S"<class 'gluon.validators.IS_DATETIME'>"
+p193
+sS'STYLE'
+p194
+S"<class 'gluon.html.STYLE'>"
+p195
+sS'LABEL'
+p196
+S"<class 'gluon.html.LABEL'>"
+p197
+sS'CLEANUP'
+p198
+S"<class 'gluon.validators.CLEANUP'>"
+p199
+sS'listado_cuestionario_diagnostico'
+p200
+S'<function listado_cuestionario_diagnostico>'
+p201
+sS'SELECT'
+p202
+S"<class 'gluon.html.SELECT'>"
+p203
+sS'CENTER'
+p204
+S"<class 'gluon.html.CENTER'>"
+p205
+sS'Auth'
+p206
+S"<class 'gluon.tools.Auth'>"
+p207
+sS'__builtins__'
+p208
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p209
+sS'HTML'
+p210
+S"<class 'gluon.html.HTML'>"
+p211
+sS'SQLFORM'
+p212
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p213
+sS'lista_diagnostico'
+p214
+S'<function lista_diagnostico>'
+p215
+sS'LOAD'
+p216
+S'<function LOAD>'
+p217
+sS'redirect'
+p218
+S'<function redirect>'
+p219
+sS'FIELDSET'
+p220
+S"<class 'gluon.html.FIELDSET'>"
+p221
+sS'IS_EQUAL_TO'
+p222
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p223
+sS'desactivarDiagnostico'
+p224
+S'<function desactivarDiagnostico>'
+p225
+sS'embed64'
+p226
+S'<function embed64>'
+p227
+sS'IS_LIST_OF'
+p228
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p229
+sS'INPUT'
+p230
+S"<class 'gluon.html.INPUT'>"
+p231
+sS'EMBED'
+p232
+S"<class 'gluon.html.EMBED'>"
+p233
+sS'PRODUCTION_MENU'
+p234
+g175
+sS'myconf'
+p235
+S"{'forms': {'formstyle': 'bootstrap3_inline', 'se...': {'names': 'localhost:*, 127.0.0.1:*, *:*, *'}}"
+p236
+sS'H2'
+p237
+S"<class 'gluon.html.H2'>"
+p238
+sS'H3'
+p239
+S"<class 'gluon.html.H3'>"
+p240
+sS'AppConfig'
+p241
+S'<function AppConfig>'
+p242
+sS'H1'
+p243
+S"<class 'gluon.html.H1'>"
+p244
+sS'H6'
+p245
+S"<class 'gluon.html.H6'>"
+p246
+sS'H4'
+p247
+S"<class 'gluon.html.H4'>"
+p248
+sS'H5'
+p249
+S"<class 'gluon.html.H5'>"
+p250
+sS'UL'
+p251
+S"<class 'gluon.html.UL'>"
+p252
+sS'IS_UPPER'
+p253
+S"<class 'gluon.validators.IS_UPPER'>"
+p254
+sS'xmlescape'
+p255
+S'<function xmlescape>'
+p256
+sS'IS_TIME'
+p257
+S"<class 'gluon.validators.IS_TIME'>"
+p258
+sS'asignar_diagnostico'
+p259
+S'<function asignar_diagnostico>'
+p260
+sS'TITLE'
+p261
+S"<class 'gluon.html.TITLE'>"
+p262
+sS'CRYPT'
+p263
+S"<class 'gluon.validators.CRYPT'>"
+p264
+sS'IS_EMPTY_OR'
+p265
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p266
+sS'MARKMIN'
+p267
+S"<class 'gluon.html.MARKMIN'>"
+p268
+sS'__name__'
+p269
+S"'__restricted__'"
+p270
+sS'STRONG'
+p271
+S"<class 'gluon.html.STRONG'>"
+p272
+sS'COL'
+p273
+S"<class 'gluon.html.COL'>"
+p274
+sS'service'
+p275
+S'<gluon.tools.Service object>'
+p276
+sS'SCRIPT'
+p277
+S"<class 'gluon.html.SCRIPT'>"
+p278
+sS'_'
+S'<function _>'
+p279
+sS'TABLE'
+p280
+S"<class 'gluon.html.TABLE'>"
+p281
+sS'IS_IPV4'
+p282
+S"<class 'gluon.validators.IS_IPV4'>"
+p283
+sS'IS_LENGTH'
+p284
+S"<class 'gluon.validators.IS_LENGTH'>"
+p285
+sS'IS_IPV6'
+p286
+S"<class 'gluon.validators.IS_IPV6'>"
+p287
+sS'XML'
+p288
+S"<class 'gluon.html.XML'>"
+p289
+sS'tipo_pregunta'
+p290
+S"{'0': <lazyT 'Orientaci\xc3\xb3n'>, '1': <lazyT 'D\xc3\xadgitos en progresi\xc3\xb3n'>, '2': <lazyT 'D\xc3\xadgitos en regresi\xc3\xb3n'>, '3': <lazyT 'Cubos en progresi\xc3\xb3n'>, '4': <lazyT 'Detecci\xc3\xb3n visual'>, '5': <lazyT 'Detecci\xc3\xb3n de d\xc3\xadgitos'>, '6': <lazyT 'Series sucesivas'>}"
+p291
+sS'B'
+S"<class 'gluon.html.B'>"
+p292
+sS'IMG'
+p293
+S"<class 'gluon.html.IMG'>"
+p294
+sS'SQLTABLE'
+p295
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p296
+sS'IS_MATCH'
+p297
+S"<class 'gluon.validators.IS_MATCH'>"
+p298
+sS'IS_ALPHANUMERIC'
+p299
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p300
+sS'listado_preguntas'
+p301
+S'<function listado_preguntas>'
+p302
+sS'nuevo_diagnostico'
+p303
+S'<function nuevo_diagnostico>'
+p304
+sS'SPAN'
+p305
+S"<class 'gluon.html.SPAN'>"
+p306
+sS'IS_JSON'
+p307
+S"<class 'gluon.validators.IS_JSON'>"
+p308
+sS'IS_IPADDRESS'
+p309
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p310
+sS'IS_SLUG'
+p311
+S"<class 'gluon.validators.IS_SLUG'>"
+p312
+sS'BEAUTIFY'
+p313
+S"<class 'gluon.html.BEAUTIFY'>"
+p314
+sS'META'
+p315
+S"<class 'gluon.html.META'>"
+p316
+sS'tipo_diagnostico'
+p317
+S"{'0': <lazyT 'Inicial'>, '1': <lazyT 'Otro'>}"
+p318
+sS'BUTTON'
+p319
+S"<class 'gluon.html.BUTTON'>"
+p320
+sS'IS_DATE'
+p321
+S"<class 'gluon.validators.IS_DATE'>"
+p322
+sS'IS_EMAIL'
+p323
+S"<class 'gluon.validators.IS_EMAIL'>"
+p324
+sS'IS_NOT_EMPTY'
+p325
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p326
+sS'IS_FLOAT_IN_RANGE'
+p327
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p328
+sS'plugins'
+p329
+S'<gluon.tools.PluginManager object>'
+p330
+sS'TBODY'
+p331
+S"<class 'gluon.html.TBODY'>"
+p332
+sS'CAT'
+p333
+S"<class 'gluon.html.CAT'>"
+p334
+sS'Field'
+p335
+S"<class 'pydal.objects.Field'>"
+p336
+sS'IS_LIST_OF_EMAILS'
+p337
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p338
+sS'DIV'
+p339
+S"<class 'gluon.html.DIV'>"
+p340
+sS'LEGEND'
+p341
+S"<class 'gluon.html.LEGEND'>"
+p342
+sS'__activo'
+p343
+S'<function __activo>'
+p344
+sS'COLGROUP'
+p345
+S"<class 'gluon.html.COLGROUP'>"
+p346
+sS'DAL'
+p347
+S"<class 'pydal.base.DAL'>"
+p348
+sS'ASSIGNJS'
+p349
+S'<function ASSIGNJS>'
+p350
+sS'TR'
+p351
+S"<class 'gluon.html.TR'>"
+p352
+sS'LI'
+p353
+S"<class 'gluon.html.LI'>"
+p354
+sS'TH'
+p355
+S"<class 'gluon.html.TH'>"
+p356
+sS'TD'
+p357
+S"<class 'gluon.html.TD'>"
+p358
+sS'PluginManager'
+p359
+S"<class 'gluon.tools.PluginManager'>"
+p360
+sS'IS_URL'
+p361
+S"<class 'gluon.validators.IS_URL'>"
+p362
+sS'A'
+S"<class 'gluon.html.A'>"
+p363
+sS'HEAD'
+p364
+S"<class 'gluon.html.HEAD'>"
+p365
+sS'IS_DATETIME_IN_RANGE'
+p366
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p367
+sS'FORM'
+p368
+S"<class 'gluon.html.FORM'>"
+p369
+sS'I'
+S"<class 'gluon.html.I'>"
+p370
+sS'IS_NOT_IN_DB'
+p371
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p372
+sg112
+S"<Storage {'status': 200, 'body': <cStringIO.Stri...t': None, 'files': [], '_custom_rollback': None}>"
+p373
+sS'THEAD'
+p374
+S"<class 'gluon.html.THEAD'>"
+p375
+sS'ANY_OF'
+p376
+S"<class 'gluon.validators.ANY_OF'>"
+p377
+sS'IS_NULL_OR'
+p378
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p379
+sg56
+S"<Storage {'_vars': None, 'function': 'listado_cu... of <Storage {...}>>, 'post_vars': <Storage {}>}>"
+p380
+sS'IS_EXPR'
+p381
+S"<class 'gluon.validators.IS_EXPR'>"
+p382
+sS'T'
+S'<gluon.languages.translator object>'
+p383
+sS'IS_IN_SET'
+p384
+S"<class 'gluon.validators.IS_IN_SET'>"
+p385
+sS'IS_UPLOAD_FILENAME'
+p386
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p387
+sS'TT'
+p388
+S"<class 'gluon.html.TT'>"
+p389
+sS'IS_DECIMAL_IN_RANGE'
+p390
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p391
+sssS'traceback'
+p392
+S'Traceback (most recent call last):\n  File "/opt/python/web2py-files/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/opt/python/web2py-files/web2py/applications/proyect/views/especialista/listado_cuestionario_diagnostico.load", line 3, in <module>\n    {{=request.args()}}\nTypeError: __call__() takes at least 2 arguments (1 given)\n'
+p393
+s.
