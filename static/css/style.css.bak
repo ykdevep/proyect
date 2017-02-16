@@ -8,6 +8,7 @@ body,
 
 body {
     padding-top: 100px;
+    overflow-x: hidden;
 }
 
 .app {
@@ -32,7 +33,7 @@ body {
 }
 
 .navbar-inverse {
-    background-color: rgba(227, 8, 19, 0.80);
+    background-color: rgba(227, 8, 19, 0.90);
 }
 
 a {

@@ -1,0 +1,9 @@
+pregunta.descripcion,pregunta.juego_datos,pregunta.juego_respuestas,pregunta.tipo,pregunta.tiempo,pregunta.intentos,pregunta.evaluacion,pregunta.puntos,pregunta.is_active
+fasdfasdf,<NULL>,<NULL>,0,<NULL>,<NULL>,<NULL>,1,z,True
+"Pregunta de Orientación (Tiempo, Espacio y Persona).",¿En qué día estamos?|¿En qué mes estamos?|¿En qué año estamos?|¿En qué hora estamos?|¿En qué calles vives?|¿En qué colonia vives?|¿Cuántos años tienes?,,0,0.0,1,1,7,True
+Te voy a mostrar una serie de números.,2-5-8|8-3-8-3|2-9-5-7-6|2-0-8-8-4-1%2-5-8|8-3-8-3|2-9-5-7-6|2-0-8-8-4-1,2-5-8|8-3-8-3|2-9-5-7-6|2-0-8-8-4-1%2-5-8|8-3-8-3|2-9-5-7-6|2-0-8-8-4-1,1,5.0,2,1,8,True
+Numeros al reves.,1-2-3,3-2-1,2,4.0,1,1,1,True
+Contar de 3 en 3 empezando por el 1 y terminado en 40.,Contar de 3 en 3 empezando por el 1 y terminado en 40,1-4-7-10-13-16-19-22-25-28-31-34-37-40,6,45.0,1,1,1,True
+Colocar los cubos en el diagrama de manera que los números queden visibles.,8-9-1|4-6-7-3%5-9-2|2-5-8-3,8-9-1|4-6-7-3%5-9-2|2-5-8-3,3,0.0,2,1,4,True
+Tiene 60 seg para identificar el color de la figura que se muestra 4 segundos.,2b5997-679f25-d34108-cd821c-d34108-d34108-2b5997-679f25-679f25|679f25-2b5997-d34108-cd821c-d34108-679f25-679f25-d34108-2b5997|d34108-2b5997-679f25-cd821c-d34108-2b5997-679f25-d34108-679f25|,679f25|2b5997|d34108,4,60.0,1,1,4,True
+"Se irán mostrando una serie de números cuando veas el número 2 e inmediatamente después el 5, debes anotar ocurrencias.",1-5-6-2-5-6-2-4-6-5-2|8-5-6-9-5-6-2-5-6-5-2|3-5-6-0-5-6-2-4-2-5-2|4-5-6-8-5-6-2-5-6-5-2%1-5-6-2-5-6-2-4-6-5-2|8-5-6-9-5-6-2-5-6-5-2|3-5-6-0-5-6-2-4-2-5-2|4-5-6-8-5-6-2-5-6-5-2,#-#-#-2-5-#-#-#-#-#-#|#-#-#-#-#-#-2-5-#-#-#|#-#-#-#-#-#-#-#-2-5-#|#-#-#-#-#-#-2-5-#-#-#%#-#-#-2-5-#-#-#-#-#-#|#-#-#-#-#-#-2-5-#-#-#|#-#-#-#-#-#-#-#-2-5-#|#-#-#-#-#-#-2-5-#-#-#,5,30.0,2,1,8,True

@@ -58,7 +58,7 @@
 
                     <div class="row">
                         <div class="col-md-9 col-md-offset-3">
-                            {{=H5(CAT(T("Evaluación de Diagnóstico: "), total_puntos, ' ', T("ptos")))}}
+                            {{=H5(CAT(T("Evaluación de Diagnóstico: "), 0, ' ', T("ptos")))}}
                         </div>
                     </div>
                 </div>

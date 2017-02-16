@@ -8,6 +8,7 @@ body,
 
 body {
     padding-top: 100px;
+    overflow-x: hidden!important;
 }
 
 .app {

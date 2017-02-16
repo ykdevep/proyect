@@ -1,0 +1,3 @@
+auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.password,auth_user.registration_key,auth_user.reset_password_key,auth_user.registration_id,auth_user.fecha_nacimiento
+27427756312748366090444997323,Especialista,asdfe,especialista@upr.edu.cu,"pbkdf2(1000,20,sha512)$a67e64eb772fc61c$f39e7a25a2fdcbb4465126d58160aa19917b9b73",,,,<NULL>
+27427756755470223859474236108,Estudiante,asd,estudiante@upr.edu.cu,"pbkdf2(1000,20,sha512)$916c3469bc0b9359$aca0707b85e6cc4a26a2a31e3d0e154f10c68eea",,,,1988-09-19

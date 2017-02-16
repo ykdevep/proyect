@@ -1,1 +1,110 @@
-<p>{{=diagnostico.respuesta.select()}}</p>
+<article>
+{{if pregunta:}}
+    <!--Card-->
+    <div class="card wow fadeInRight" style="padding: 10px;">
+        <!--Card title-->
+        <div class="overlay hm-white-slight">
+            {{=H5(CAT(int(pregunta.tipo)+1, '.)', ' ',tipo_pregunta[pregunta.tipo]))}}
+            <!--Text-->
+            <p class="card-text">{{=P(pregunta.descripcion)}}</p>
+            <hr/>
+        </div>
+        <!--/.Card titlw-->
+
+        <!--Card content-->
+        <div class="card-block text-xs-center">
+            <form id="pregunta-form" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{=respuesta_id}}">
+                <input type="hidden" name="intrusiones" value="0">
+                <input type="hidden" name="aciertos" value="0">
+
+                {{if pregunta.tipo == '0':}}
+                    {{=UL(LI(CAT(H3(pregunta.texto), INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '1':}}
+                    {{=UL(LI(CAT(H3(pregunta.texto, _class="wow fadeInLeft", **{'data-wow-delay': "0.2s"}), INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '2':}}
+                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '3':}}
+                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '4':}}
+                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '5':}}
+                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{elif pregunta.tipo == '6':}}
+                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
+                {{else:}}
+                    <h1>Error </h1>
+                {{pass}}
+            </form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissible" role="alert">{{=T('Click en el botón "Guardar y siguiente" para guardar respuestas y proseguir con el cuestionario')}}</div>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <nav>
+                      <ul class="pagination pagination-lg">
+                          <li class="{{if pregunta.tipo == '0':}}active{{pass}}"><span>1 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '1':}}active{{pass}}"><span>2 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '2':}}active{{pass}}"><span>3 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '3':}}active{{pass}}"><span>4 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '4':}}active{{pass}}"><span>5 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '5':}}active{{pass}}"><span>6 <span class="sr-only"></span></span></li>
+                          <li class="{{if pregunta.tipo == '6':}}active{{pass}}"><span>7 <span class="sr-only"></span></span></li>
+                      </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3 col-md-offset-2">
+                    {{=A("Guardar y siguiente", _id="guardar", _class="btn btn-default btn-lg", _href=URL(args=[pregunta.diagnostico]), cid=request.cid)}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Card content-->
+
+    <script text="javascript">
+        $(function () {
+            /*Función ajax para guardar la pregunta*/
+            $('#guardar').click(function(event){
+
+                var formData = $('#pregunta-form').serializeArray();
+
+                $.ajax({
+                    // la URL para la petición
+                    url : 'guardar_respuesta',
+                    // la información a enviar
+                    // (también es posible utilizar una cadena de datos)
+                    data : formData,
+                    // especifica si será una petición POST o GET
+                    type : 'POST',
+                    // el tipo de información que se espera de respuesta
+                    dataType : 'json',
+                    // código a ejecutar si la petición es satisfactoria;
+                    // la respuesta es pasada como argumento a la función
+                    success : function(json) {
+                        $('.alert').text("{{=T('Guardada correctamente')}}");
+                    },
+                    // código a ejecutar si la petición falla;
+                    // son pasados como argumentos a la función
+                    // el objeto de la petición en crudo y código de estatus de la petición
+                    error : function(xhr, status) {
+                        $('.alert').text("{{=T('Disculpe, existió un problema')}}");
+                    },
+                    // código a ejecutar sin importar si la petición falló o no
+                    complete : function(xhr, status) {
+                        console.log('Petición realizada');
+                    }
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
+{{else:}}
+    <script text="javascript">
+        $(function () {
+            $('#diagnostico-time').val('false');
+        });
+    </script>
+    {{=H1(T("Se acabaron las preguntas de este cuestionario"))}}
+{{pass}}
+</article>
