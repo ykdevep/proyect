@@ -5,7 +5,7 @@
 def users():
     selectable = lambda ids: db(db.auth_user.id.belongs(ids)).delete()
 
-    fields = [db.auth_user.first_name, db.auth_user.email, db.auth_user.centro]
+    fields = [db.auth_user.first_name, db.auth_user.email]
 
     grid = SQLFORM.smartgrid(db.auth_user, selectable=selectable, linked_tables=[db.auth_membership], exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))
 

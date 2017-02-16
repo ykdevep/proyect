@@ -1,0 +1,52 @@
+{{if len(preguntas) > 0:}}
+    <div class="row">
+        <div class="col-md-12">
+            <h5>{{=request.args(1)+1}}.) {{=tipo_pregunta[str(request.args(1))]}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        {{
+            listado_pregunta = UL(LI(H5(T("Preguntas"))), _class="nav pregunta")
+            listado_respuesta = UL(LI(H5(T("Respuestas"))), _class="nav respuesta")
+            puntos = 0
+        }}
+
+        {{for pregunta in preguntas:}}
+            {{listado_pregunta.append(LI(P(pregunta.texto, _title=numero_ensayo[pregunta.ensayo], **{'_data-toggle': "tooltip", '_data-placement': "top"})))}}
+            {{if pregunta.respuesta:}}
+                {{listado_respuesta.append(LI(P(pregunta.respuesta)))}}
+            {{else:}}
+                {{listado_respuesta.append(LI(INPUT(_type="text")))}}
+            {{pass}}
+            {{puntos = puntos + pregunta.puntos}}
+        {{pass}}
+        <div class="col-md-5">
+            {{=listado_pregunta}}
+        </div>
+
+        <div class="col-md-5 col-md-offset-1">
+            {{=listado_respuesta}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+            {{=H6(CAT(T("Total de puntos: "), puntos, ' ', T("ptos")))}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+{{else:}}
+    <div class="row">
+        <div class="col-md-12">
+            <h5>
+                {{=T('No hay preguntas de este tipo ->')}}{{=tipo_pregunta[str(request.args(1))]}}
+            </h5>
+        </div>
+    </div>
+{{pass}}

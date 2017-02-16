@@ -39,6 +39,28 @@ def new_admin():
         response.flash = T('Por favor complete el formulario')
     return dict(form=form)
 
+@auth.requires_membership("Administrador")
+def new_student():
+
+    response.title = T("Nuevo Estudiante") + response.title
+
+    form = SQLFORM(db.auth_user)
+
+    if form.validate():
+        group = db(db.auth_group.role == "Estudiante").select().first()
+
+        if group:
+            form.vars.id = db.auth_user.insert(**dict(form.vars))
+            db.auth_membership.insert(user_id=form.vars.id, group_id=group.id)
+            response.flash = T('Nuevo Estudiante insertado')
+        else:
+            response.flash = T('No hay grupo denominado "Estudiante"')
+    elif form.errors:
+        response.flash = T('El formulario tiene errores')
+    else:
+        response.flash = T('Por favor complete el formulario')
+    return dict(form=form)
+
 @auth.requires_membership("Especialista")
 def new_revisor():
 

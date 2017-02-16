@@ -1,10 +1,89 @@
 # -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
+def visor_preguntas():
+    '''
+    Implementación de un visor de preguntas de un diagnóstico dado
+    '''
+    if request.cid:
+        pregunta = None
+        respuesta_id = None
 
+        diagnostico = db.diagnostico(request.args(0))
+
+        if diagnostico:
+            preguntas = diagnostico.pregunta.select(orderby=db.pregunta.tipo)
+            consulta = ((db.respuesta.diagnostico == diagnostico.id) & (db.respuesta.created_by == auth.user.id))
+
+            if len(preguntas) > len(db(consulta).select()):
+
+                respuesta = db(consulta).select(orderby=db.respuesta.created_on).last()
+
+                if respuesta:
+                    if respuesta.created_on != respuesta.modified_on:
+                        pregunta = preguntas[len(db(consulta).select())]
+                        respuesta_id = db.respuesta.insert(diagnostico=diagnostico.id)
+                    else:
+                        respuesta_id = respuesta.id
+                        pregunta = preguntas[len(db(consulta).select())-1]
+                else:
+                    pregunta = preguntas[len(db(consulta).select())]
+                    respuesta_id = db.respuesta.insert(diagnostico=diagnostico.id)
+
+                response.headers['web2py-component-flash']=T('Siguiente Pregunta')
+
+        return dict(pregunta=pregunta, respuesta_id=respuesta_id)
+    else:
+        raise HTTP(403)
+
+def guardar_respuesta():
+    '''
+    Guardar una pregunta, petición ajax
+    '''
+    import gluon.contrib.simplejson
+    if request.ajax:
+
+        respuesta = db.respuesta(request.vars.id)
+        
+        if respuesta:
+            respuesta.update_record(respuesta=request.vars.respuesta, pregunta=request.vars.pregunta, aciertos=request.vars.aciertos, intrusiones=request.vars.intrusiones)
+            return gluon.contrib.simplejson.dumps({'estado': True})
+        else:
+            return gluon.contrib.simplejson.dumps({'estado': False})
+    else:
+        return gluon.contrib.simplejson.dumps({'estado': False})
+
+def get_tiempo():
+    '''
+    Guardar una pregunta, petición ajax
+    '''
+    import gluon.contrib.simplejson
+
+    if request.ajax:
+        diagnostico = db.diagnostico(request.vars.diagnostico)
+
+        if diagnostico:
+            respuesta_first = db((db.respuesta.diagnostico == diagnostico.id) & (db.respuesta.created_by == auth.user.id)).select(orderby=db.respuesta.created_on).first()
+            respuesta_last = db((db.respuesta.diagnostico == diagnostico.id) & (db.respuesta.created_by == auth.user.id)).select(orderby=db.respuesta.created_on).last()
+            if respuesta_first and respuesta_last:
+                if ((diagnostico.respuesta.count() == diagnostico.pregunta.count()) and (respuesta_last.created_on != respuesta_last.modified_on)):
+                    time = respuesta_last.modified_on - respuesta_first.created_on
+                    return gluon.contrib.simplejson.dumps({'time': (1+time.seconds)*1000, 'start': False})
+                time = request.now - respuesta_first.created_on
+                return gluon.contrib.simplejson.dumps({'time': (1+time.seconds)*1000, 'start': True})
+            return gluon.contrib.simplejson.dumps({'time': 1000, 'start': True})
+        else:
+            return gluon.contrib.simplejson.dumps({'time': None, 'start': False})
+    else:
+        return gluon.contrib.simplejson.dumps({'time': None})
+
+@auth.requires_membership("Estudiante")
 def cuestionario_diagnostico():
     response.flash = T("Cuestionario de diagnóstico")
     response.title = T("Cuestionario de diagnóstico") + response.title
-    return dict()
+
+    diagnostico = db((db.diagnostico.activo == True) & (db.diagnostico.tipo == 0)).select().first()
+
+    return dict(diagnostico=diagnostico)
 
 def diag_alternada():
 

@@ -10,6 +10,9 @@
             form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn')
         pass
     pass
+    if request.args(0)=='profile' or request.args(0) == 'change_password':
+form.add_button(CAT(XML('<ico class="glyphicon glyphicon-home"></ico> '), T('Escritorio')),URL('index'),_class='btn btn-info')
+    pass
     =form
     }}
 

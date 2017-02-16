@@ -1,1 +1,99 @@
 {{extend 'layout.html'}}
+
+{{if diagnostico:}}
+    {{loader = DIV(DIV(DIV(IMG(_src=URL("static","img/loader.gif"), _width="40%"), _class="col-md-5 col-md-offset-5"), _class="row"), _class="container")}}
+
+    <form id="diagnostico-form">
+        <input type="hidden" value="{{=diagnostico.id}}" name="diagnostico"/>
+        <input type="hidden" value="true" name="start" id="diagnostico-time"/>
+    </form>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>{{=diagnostico.titulo}}</h4>
+            <p>{{=diagnostico.descripcion}}</p>
+        </div>
+        <div class="col-md-4">
+            <h5>{{=CAT(auth.user.first_name, ' ',auth.user.last_name)}}</h5>
+            <h6>{{=CAT(T('Fecha de nacimiento:'), ' ', auth.user.fecha_nacimiento)}}</h6>
+            <h6>{{=CAT(T('Edad:'), ' ', int((request.now.date()-auth.user.fecha_nacimiento).days / 365.25 ))}}</h6>
+        </div>
+        <div class="col-md-2">
+            <h4 class=""><span id="time"></span>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <section id="diagnostico">
+        <div class="row">
+            <div class="col-md-12">
+                {{LOAD("estudiante", 'visor_preguntas.load', args=[diagnostico.id], user_signature=True, ajax=True, content=loader)}}
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </section>
+
+{{else:}}
+    <h2 class="wow fadeInLeft" data-wow-delay="0.3s">{{=T('No hay Cuestionario Diagnóstico Inicial Activo')}}</h2>
+{{pass}}
+
+{{block head}}
+    <style>
+        #diagnostico {
+            padding: 10px;
+            min-height: 600px;
+        }
+    </style>
+{{end}}
+
+{{block page_js}}
+    {{super}}
+    {{if diagnostico:}}
+        <script src="{{=URL('static','js/jquery.timer.js')}}"></script>
+        <script>
+            $(function(){
+                var timer;
+                var tiempo = new Date();
+                tiempo.setHours(0);
+                tiempo.setMinutes(0);
+                tiempo.setSeconds(0);
+
+                var diagnosticoForm = $('#diagnostico-form').serializeArray();
+
+                // obtiene información en formato JSON desde el servidor
+                $.getJSON('get_tiempo', diagnosticoForm, function(json) {
+
+                    if (json.time){
+
+                        var time = tiempo.getTime()-json.time*-1;
+                        if (json.start){
+                            tiempo.setTime(time);
+                            timer = $.timer(1000, function() {
+                                        var start = $('#diagnostico-time').val();
+
+                                        if (start == 'false'){
+                                           timer.stop();
+                                        } else {
+                                            time = 1000 + time;
+                                            tiempo.setTime(time);
+                                            $("#time").text(tiempo.toLocaleTimeString());
+                                        }
+
+                                    });
+                        } else {
+                            tiempo.setTime(time);
+                            $("#time").text(tiempo.toLocaleTimeString());
+                        }
+                    } else {
+                        $("#time").text("Error");
+                    }
+                });
+            });
+        </script>
+    {{pass}}
+{{end}}
