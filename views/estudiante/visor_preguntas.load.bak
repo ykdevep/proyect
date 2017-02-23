@@ -64,7 +64,7 @@
                             <ul class="nav pagination">
                                 {{for i in pregunta.texto.split('-'):}}
                                     <label><li class="wow fadeIn" data-wow-delay="{{=pregunta.tiempo+1}}s" style="margin: 3px; opacity: 1; background-color: #{{=i}}; width: 50px; height: 50px; border-radius: 25px;">
-                                         <input type="radio" style=" margin-left: 4px; margin-top: 20px;" name="text" value="{{=i}}">
+                                         <input type="radio" style=" margin-left: 4px; margin-top: 19px;" name="texto" value="{{=i}}">
                                         </li></label>
                                 {{pass}}
                             </ul>

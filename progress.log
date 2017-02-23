@@ -2640,3 +2640,11 @@
 [2017-02-23 13:57:19] EDIT proyect/views/estudiante/visor_preguntas.load: 0
 [2017-02-23 13:57:42] EDIT proyect/views/estudiante/visor_preguntas.load: 0
 [2017-02-23 13:58:01] EDIT proyect/views/estudiante/visor_preguntas.load: 0
+[2017-02-23 14:04:49] EDIT proyect/views/estudiante/visor_preguntas.load: 0
+[2017-02-23 14:06:06] EDIT proyect/controllers/estudiante.py: 1
+[2017-02-23 14:07:43] EDIT proyect/views/estudiante/visor_preguntas.load: 1
+[2017-02-23 14:09:57] EDIT proyect/controllers/estudiante.py: -1
+[2017-02-23 14:18:55] EDIT proyect/controllers/estudiante.py: 21
+[2017-02-23 14:19:31] EDIT proyect/controllers/estudiante.py: 0
+[2017-02-23 14:20:48] EDIT proyect/controllers/estudiante.py: -21
+[2017-02-23 14:20:53] EDIT proyect/controllers/estudiante.py: 0

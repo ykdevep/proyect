@@ -64,7 +64,7 @@
                             <ul class="nav pagination">
                                 {{for i in pregunta.texto.split('-'):}}
                                     <label><li class="wow fadeIn" data-wow-delay="{{=pregunta.tiempo+1}}s" style="margin: 3px; opacity: 1; background-color: #{{=i}}; width: 50px; height: 50px; border-radius: 25px;">
-                                         <input type="radio" style=" margin-left: 4px; margin-top: 19px;" name="text" value="{{=i}}">
+                                         <input type="radio" style=" margin-left: 4px; margin-top: 19px;" name="texto" value="{{=i}}">
                                         </li></label>
                                 {{pass}}
                             </ul>
@@ -88,7 +88,7 @@
                             <script>
                                 $(function(){
                                     var timer = $.timer({{=pregunta.tiempo}}*1000, function() {
-                                        $('#tipo_6').attr('disabled', 'disables');
+                                        $('#tipo_6').attr('disabled', 'disabled');
                                         $('.message').text("{{=T('Se agotó el tiempo')}}");
                                     });
                                 });
@@ -150,6 +150,7 @@
                     // código a ejecutar si la petición es satisfactoria;
                     // la respuesta es pasada como argumento a la función
                     success : function(json) {
+                        $('#guardar').addClass('disabled')
                         $('.message').text("{{=T('Guardada correctamente')}}");
                         $('#siguiente').removeClass('disabled');
                     },

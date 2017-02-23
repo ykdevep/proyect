@@ -46,10 +46,10 @@ def guardar_respuesta():
 
         if respuesta:
             pregunta = db.pregunta(respuesta.pregunta)
-            if pregunta.respuesta == request.vars.respuesta:
-                respuesta.update_record(texto=request.vars.respuesta, pregunta=request.vars.pregunta, aciertos=1, intrusiones=0, correcta=True)
+            if pregunta.respuesta == request.vars.texto:
+                respuesta.update_record(texto=request.vars.texto, pregunta=request.vars.pregunta, aciertos=1, intrusiones=0, correcta=True)
             else:
-                respuesta.update_record(texto=request.vars.respuesta, pregunta=request.vars.pregunta, aciertos=0, intrusiones=1)
+                respuesta.update_record(texto=request.vars.texto, pregunta=request.vars.pregunta, aciertos=0, intrusiones=1)
             return gluon.contrib.simplejson.dumps({'estado': True})
         else:
             return gluon.contrib.simplejson.dumps({'estado': False})
@@ -58,7 +58,7 @@ def guardar_respuesta():
 
 def get_tiempo():
     '''
-    Guardar una pregunta, petición ajax
+    Get tiempo transcurrido de un diagnostico en curso
     '''
     import gluon.contrib.simplejson
 
@@ -79,6 +79,7 @@ def get_tiempo():
             return gluon.contrib.simplejson.dumps({'time': 0, 'start': False})
     else:
         return gluon.contrib.simplejson.dumps({'time': 0, 'start': False})
+
 
 @auth.requires_membership("Estudiante")
 def cuestionario_diagnostico():
