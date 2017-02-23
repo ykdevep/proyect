@@ -1,0 +1,47 @@
+<article>
+    {{=preguntas}}
+    {{if preguntas:}}
+        <!--Card-->
+        <div class="card wow fadeInRightBig" data-wow-delay="0.1s" style="padding: 10px;">
+            <!--Card title-->
+            <div class="overlay hm-white-slight">
+                {{=H5(CAT(int(tipo)+1, '.)', ' ',tipo_pregunta[tipo]))}}
+                <!--Text-->
+                <hr/>
+            </div>
+            <!--/.Card title-->
+
+            <!--Card content-->
+            <div class="card-block text-xs-center">
+                <div class="col-md-6 col-md-offset-3">
+                    {{=LOAD("estudiante", 'visor_preguntas.load', args=[id_diagnostico], user_signature=True, ajax=True)}}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr />
+                    </div>
+                    <div class="col-md-6 col-md-offset-1">
+                        <nav>
+                          <ul class="pagination pagination-lg">
+                              <li class="{{if tipo == '0':}}active{{pass}}"><span>1 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '1':}}active{{pass}}"><span>2 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '2':}}active{{pass}}"><span>3 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '3':}}active{{pass}}"><span>4 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '4':}}active{{pass}}"><span>5 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '5':}}active{{pass}}"><span>6 <span class="sr-only"></span></span></li>
+                              <li class="{{if tipo == '6':}}active{{pass}}"><span>7 <span class="sr-only"></span></span></li>
+                          </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+                        {{=A("Siguiente", _id="siguiente", _class="btn btn-danger btn-lg disabled", _href=URL(args=[id_diagnostico, int(tipo)+1]), cid=request.cid)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Card content-->
+    {{else:}}
+        <h1>{{=T('Se acabaron las preguntas de este cuestionario')}}
+    {{pass}}
+</article>

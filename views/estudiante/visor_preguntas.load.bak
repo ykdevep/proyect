@@ -1,45 +1,111 @@
 <article>
 {{if pregunta:}}
     <!--Card-->
-    <div class="card wow fadeInRight" style="padding: 10px;">
+    <div class="card wow fadeInRightBig" data-wow-delay="0.2s" style="padding: 10px;">
         <!--Card title-->
         <div class="overlay hm-white-slight">
-            {{=H5(CAT(int(pregunta.tipo)+1, '.)', ' ',tipo_pregunta[pregunta.tipo]))}}
+                {{=H5(CAT(int(pregunta.tipo)+1, '.)', ' ',tipo_pregunta[pregunta.tipo]))}}
+                <!--Text-->
+                <hr/>
+            </div>
+        <div class="overlay hm-white-slight">
             <!--Text-->
-            <p class="card-text">{{=P(pregunta.descripcion)}}</p>
-            <hr/>
+            <div class="col-md-12">
+                <p class="card-text">{{=P(pregunta.descripcion)}}</p>
+            </div>
         </div>
-        <!--/.Card titlw-->
+        <!--/.Card title-->
 
         <!--Card content-->
         <div class="card-block text-xs-center">
-            <form id="pregunta-form" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="{{=respuesta_id}}">
-                <input type="hidden" name="intrusiones" value="0">
-                <input type="hidden" name="aciertos" value="0">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissible message" role="alert">{{=T('Responda la respuesta')}}</div>
+                </div>
+            </div>
 
-                {{if pregunta.tipo == '0':}}
-                    {{=UL(LI(CAT(H3(pregunta.texto), INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '1':}}
-                    {{=UL(LI(CAT(H3(pregunta.texto, _class="fadeInLeft", **{'data-wow-delay': "0.2s"}), INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '2':}}
-                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '3':}}
-                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '4':}}
-                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '5':}}
-                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{elif pregunta.tipo == '6':}}
-                    {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="respuesta"))), _class="nav")}}
-                {{else:}}
-                    <h1>Error </h1>
-                {{pass}}
-            </form>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1">
+                    <form id="pregunta-form" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="{{=respuesta_id}}">
+                        <input type="hidden" name="intrusiones" value="0">
+                        <input type="hidden" name="aciertos" value="0">
+
+                        {{if pregunta.tipo == '0':}}
+                            {{=UL(LI(CAT(H3(pregunta.texto), INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="texto"))), _class="nav")}}
+                        {{elif pregunta.tipo == '1':}}
+                            <ul class="nav">
+                                <li><h3 class="wow fadeOut desaparecer" data-wow-delay="{{=pregunta.tiempo}}s">{{=pregunta.texto}}</h3> {{=CAT(INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="texto", _placeholder=T("Responde aquí")))}}</li>
+                            </ul>
+
+                        {{elif pregunta.tipo == '2':}}
+                            <ul class="nav">
+                                <li><h3 class="wow fadeOut desaparecer" data-wow-delay="{{=pregunta.tiempo}}s">{{=pregunta.texto}}</h3> {{=CAT(INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="texto", _placeholder=T("Responde aquí")))}}</li>
+                            </ul>
+                        {{elif pregunta.tipo == '3':}}
+                            <ul class="nav">
+                                <li>
+                                    {{for i in pregunta.texto.split('-'):}}
+                                        {{if str(i) in pregunta.respuesta.split('-'):}}
+                                            <div class="wow fadeOut aparecer" data-wow-delay="{{=pregunta.respuesta.split('-').index(str(i))*pregunta.tiempo}}s" style="background-color: rgba(227, 8, 19, 0.9); width: 50px; height: 50px; margin: 5px; padding: 5px; position: relative; float: left; text-align: center;">
+                                                <p style="color: white">{{=i}}</p>
+                                            </div>
+                                        {{else:}}
+                                            {{=DIV(P(i, _style="color: white"), _style="background-color: rgba(227, 8, 19, 0.9); width: 50px; height: 50px; margin: 5px; padding: 5px; position: relative; float: left; text-align: center;")}}
+                                        {{pass}}
+                                    {{pass}}
+                                </li>
+                                <li>{{=CAT(INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="texto", _placeholder=T("Ejemplo: 2-3-4")))}}</li>
+                            </ul>
+                        {{elif pregunta.tipo == '4':}}
+                            <div class="wow fadeOut" data-wow-delay="{{=pregunta.tiempo}}s" style="opacity: 0; background-color: #{{=pregunta.respuesta}}; width: 50px; height: 50px; border-radius: 25px;">
+                            </div>
+                            {{=INPUT(_type="hidden", _name="pregunta", _value=pregunta.id)}}
+                            <ul class="nav pagination">
+                                {{for i in pregunta.texto.split('-'):}}
+                                    <li class="wow fadeIn" data-wow-delay="{{=pregunta.tiempo+1}}s" style="margin: 3px; opacity: 1; background-color: #{{=i}}; width: 50px; height: 50px; border-radius: 25px;">
+                                         <input type="radio" style="width: 20px; height: 20px;" name="text" value="{{=i}}">
+                                    </li>
+                                {{pass}}
+                            </ul>
+
+                        {{elif pregunta.tipo == '5':}}
+                            <ul class="nav">
+                                <li>
+                                    {{k=1}}
+                                    {{for i in pregunta.texto.split('-'):}}
+                                        <div class="wow hinge" data-wow-delay="{{=k}}s" style="opacity: 0; background-color: #e21410; width: 50px; height: 50px; margin: 5px; padding: 5px; position: relative; float: left; text-align: center;">
+                                            <p style="color: white">{{=i}}</p>
+                                        </div>
+                                    {{k=k+pregunta.tiempo}}
+                                    {{pass}}
+                                </li>
+                                <li>{{=CAT(INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _name="texto", _placeholder=T("Cantidad de ocurrencias ejemplo: 3")))}}</li>
+                            </ul>
+                        {{elif pregunta.tipo == '6':}}
+
+                            {{=UL(LI(CAT(pregunta.texto, INPUT(_type="hidden", _name="pregunta", _value=pregunta.id), INPUT(_type="text", _id="tipo_6", _name="texto"))), _class="nav")}}
+                            <script>
+                                $(function(){
+                                    var timer = $.timer({{=pregunta.tiempo}}*1000, function() {
+                                        $('#tipo_6').attr('disabled', 'disables');
+                                        $('.message').text("{{=T('Se agotó el tiempo')}}");
+                                    });
+                                });
+                            </script>
+                        {{else:}}
+                            <h1>Error </h1>
+                        {{pass}}
+                    </form>
+                </div>
+                <div class="col-md-2 col-md-offset-2">
+                    {{=A(T("Guardar"), _id="guardar", _class="btn btn-default btn-lg")}}
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="alert alert-success alert-dismissible" role="alert">{{=T('Click en el botón "Guardar y siguiente" para guardar respuestas y proseguir con el cuestionario')}}</div>
+                    <hr />
                 </div>
                 <div class="col-md-6 col-md-offset-1">
                     <nav>
@@ -54,10 +120,12 @@
                       </ul>
                     </nav>
                 </div>
-                <div class="col-md-3 col-md-offset-2">
-                    {{=A("Guardar y siguiente", _id="guardar", _class="btn btn-default btn-lg", _href=URL(args=[pregunta.diagnostico]), cid=request.cid)}}
+
+                <div class="col-md-2 col-md-offset-2">
+                    {{=A("Siguiente", _id="siguiente", _class="btn btn-default btn-lg disabled", _href=URL(args=[pregunta.diagnostico]), cid=request.cid)}}
                 </div>
             </div>
+
         </div>
     </div>
     <!--/.Card content-->
@@ -82,7 +150,8 @@
                     // código a ejecutar si la petición es satisfactoria;
                     // la respuesta es pasada como argumento a la función
                     success : function(json) {
-                        $('.alert').text("{{=T('Guardada correctamente')}}");
+                        $('.message').text("{{=T('Guardada correctamente')}}");
+                        $('#siguiente').removeClass('disabled');
                     },
                     // código a ejecutar si la petición falla;
                     // son pasados como argumentos a la función
@@ -95,7 +164,7 @@
                         console.log('Petición realizada');
                     }
                 });
-                event.preventDefault();
+                event.defaultPrevented;
             });
         });
     </script>
@@ -108,3 +177,14 @@
     {{=H1(T("Se acabaron las preguntas de este cuestionario"))}}
 {{pass}}
 </article>
+
+<style>
+    .desaparecer {
+        opacity: 0;
+    }
+
+    .aparecer {
+        opacity: 1;
+    }
+
+</style>

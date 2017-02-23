@@ -37,7 +37,7 @@ def gestionar_diagnostico():
         preguntas = diagnostico.pregunta.select(orderby=db.pregunta.tipo|db.pregunta.ensayo)
         selectable = lambda ids: db(db.pregunta.id.belongs(ids)).delete()
         orderby = [db.pregunta.tipo|db.pregunta.ensayo|db.pregunta.created_on]
-        fields = [db.pregunta.texto, db.pregunta.tipo, db.pregunta.ensayo, db.pregunta.puntos, db.pregunta.tiempo, db.pregunta.intentos]
+        fields = [db.pregunta.texto, db.pregunta.tipo, db.pregunta.ensayo, db.pregunta.puntos, db.pregunta.tiempo]
     elif (("pregunta.diagnostico" in request.args) and ("pregunta" in request.args) and ("new" in request.args)):
         response.title = T('Pregunta del diagnóstico') + response.title
         response.flash = T('Pregunta del diagnóstico')

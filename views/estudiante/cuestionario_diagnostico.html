@@ -3,38 +3,51 @@
 {{if diagnostico:}}
     {{loader = DIV(DIV(DIV(IMG(_src=URL("static","img/loader.gif"), _width="40%"), _class="col-md-5 col-md-offset-5"), _class="row"), _class="container")}}
 
-    <form id="diagnostico-form">
-        <input type="hidden" value="{{=diagnostico.id}}" name="diagnostico"/>
-        <input type="hidden" value="true" name="start" id="diagnostico-time"/>
-    </form>
+   <section id="diagnostico">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--Card-->
+                <div class="card wow" style="padding: 10px;">
+                    <!--Card title-->
+                    <div class="overlay hm-white-slight">
+                        <form id="diagnostico-form">
+                            <input type="hidden" value="{{=diagnostico.id}}" name="diagnostico"/>
+                            <input type="hidden" value="true" name="start" id="diagnostico-time"/>
+                        </form>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h4>{{=diagnostico.titulo}}</h4>
-            <p>{{=diagnostico.descripcion}}</p>
-        </div>
-        <div class="col-md-4">
-            <h5>{{=CAT(auth.user.first_name, ' ',auth.user.last_name)}}</h5>
-            <h6>{{=CAT(T('Fecha de nacimiento:'), ' ', auth.user.fecha_nacimiento)}}</h6>
-            <h6>{{=CAT(T('Edad:'), ' ', int((request.now.date()-auth.user.fecha_nacimiento).days / 365.25 ))}}</h6>
-        </div>
-        <div class="col-md-2">
-            <h4 class=""><span id="time"></span>
-            </h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <hr />
-        </div>
-    </div>
-    <section id="diagnostico">
-        <div class="row">
-            <div class="col-md-12">
-                {{=LOAD("estudiante", 'visor_preguntas.load', args=[diagnostico.id], user_signature=True, ajax=True, content=loader)}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>{{=diagnostico.titulo}}</h4>
+                                <p>{{=diagnostico.descripcion}}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>{{=CAT(auth.user.first_name, ' ',auth.user.last_name)}}</h5>
+                                <h6>{{=CAT(T('Fecha de nacimiento:'), ' ', auth.user.fecha_nacimiento)}}</h6>
+                                <h6>{{=CAT(T('Edad:'), ' ', int((request.now.date()-auth.user.fecha_nacimiento).days / 365.25 ))}}</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h4 class=""><span id="time"></span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.Card title-->
+
+                    <!--Card content-->
+                    <div class="card-block text-xs-center">
+                        <div class="col-md-12">
+
+                            {{=LOAD("estudiante", 'visor_preguntas.load', args=[diagnostico.id, 0], user_signature=True, ajax=True, content=loader)}}
+                        </div>
+                    </div>
+                </div>
+                <!--/.Card content-->
             </div>
-        </div>
-        <div class="row">
         </div>
     </section>
 

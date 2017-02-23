@@ -87,25 +87,8 @@ auth = Auth(db, host_names=myconf.get('host.names'))
 service = Service()
 plugins = PluginManager()
 
-'''
-
-db.define_table('centro',
-    Field('nombre', 'string', default='', label=T('Nombre del centro')),
-    Field('nivel_educativo', 'string', default='', label=T('Nivel Educativo')),
-    Field('direccion', 'string', default='', label=T('Dirección')),
-    format='%(nombre)s')
-
-db.centro._singular = T("Centro")
-db.centro._plural = T("Centros")
-
-db.centro.nivel_educativo.requires = IS_IN_SET({'Presscolar': T('Presscolar'), 'Primaria': T('Primaria'), 'Secundaria': T('Secundaria'), 'Media Superior': T('Media Superior'), 'Superior': T('Superior')}, zero=T('Choose one'), error_message=T('Choose one'))
-db.centro.nombre.requires = IS_NOT_EMPTY()
-db.centro.direccion.requires = IS_NOT_EMPTY()
-'''
 auth.settings.extra_fields['auth_user']= [
   Field('fecha_nacimiento', 'date', default=request.now, label=T('Fecha de Nacimiento'))]
-
-
 
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
@@ -200,13 +183,12 @@ db.diagnostico._before_update.append(lambda s,f: desactivarDiagnostico(f))
 
 
 db.define_table('pregunta',
-   Field('texto', 'text', label=T('Pregunta'), comment=T('Pregunta')),
-   Field('respuesta', 'text', label=T('Respuesta'), comment=T('Respuesta de la pregunta')),
+   Field('texto', 'string', label=T('Pregunta'), comment=T('Pregunta')),
+   Field('respuesta', 'string', label=T('Respuesta'), comment=T('Respuesta de la pregunta')),
    Field('descripcion', 'string', label=T('Descripción'), comment=T('Descripción de la pregunta')),
    Field('tipo', 'string', label=T('Tipo'), comment=T('Tipo de pregunta')),
    Field('ensayo', 'string', label=T("Ensayo"), comment=T('Número de ensayo')),
-   Field('tiempo', 'double', label=T('Tiempo'), default=0.0, comment=T('Tiempo para realizar la pregunta espresado en segundos (s)')),
-   Field('intentos', 'integer', label=T('Intentos'), default=1, comment=T('Número de intentos ')),
+   Field('tiempo', 'double', label=T('Tiempo'), default=0.0, comment=T('Tiempo de visualización de la pregunta espresado en segundos (s)')),
    Field('puntos', 'integer',  label=T('Puntos'), default=1, comment=T('Evaluación de la pregunta')),
    Field('diagnostico', 'reference diagnostico', writable=False, readable=False, label=T('Diagnóstico')),
    format='%(id)s')
@@ -227,97 +209,9 @@ db.pregunta.ensayo.represent = lambda valor, registro: numero_ensayo[valor]
 
 db.define_table('respuesta',
    Field('pregunta', 'reference pregunta', label=T('Pregunta'), comment=T('Pregunta')),
+   Field('texto', 'text', label=T('Respuesta'), comment=T('Respuesta de la pregunta ')),
    Field('diagnostico', 'reference diagnostico', label=T('Diagnostico'), comment=T('Diagnostico')),
    Field('aciertos', 'integer', label=T('Aciertos'), comment=T('Aciertos de la respuesta')),
    Field('intrusiones', 'integer', label=T('Intruciones'), comment=T('Intrusiones de la respuesta')),
-   Field('respuesta', 'text', label=T('Respuesta'), comment=T('Respuesta de la pregunta ')),
+   Field('correcta', 'boolean', default=False, label=T('Correcta'), comment=T('Respuesta correcta')),
    format='%(id)s')
-
-
-'''
-NEWS_WIDTH = 2340
-NEWS_HEIGTH = 600
-
-db.define_table('banner',
-   Field('titulo', 'string', label=T('Título')),
-   Field('imagen', 'upload', uploadseparate = True, autodelete=True, label=T('Imagen'), comment=T('Image size '+str(NEWS_WIDTH)+'x'+str(NEWS_HEIGTH))),
-   Field('publicar_en', 'date', default=request.now, label=T('Publicar en')),
-   Field('habilitado', 'boolean', default=True, label=T('Está habilitado')),
-   format='%(titulo)s')
-
-db.banner._singular = T('Banner')
-db.banner._plural = T('Banners')
-
-db.banner.titulo.requires = IS_NOT_EMPTY()
-db.banner.publicar_en.requires = IS_DATE()
-db.banner.imagen.requires = [IS_EMPTY_OR(IS_IMAGE(extensions=('png', 'jpg', 'jpeg'), maxsize=(NEWS_WIDTH, NEWS_HEIGTH),  error_message=T('Image news format (png, jpeg, jpg), maxsize '+str(NEWS_WIDTH)+'x'+str(NEWS_HEIGTH))))]
-
-db.banner.imagen.represent = lambda value, register: A(T('Click here for download or url copy'), _href=URL('default', 'download', args=[value]))
-
-
-db.define_table('nivel_atencional',
-    Field('nombre', 'string', default='', label=T('Nombre'), comment=T('Atencion enfocada, Sostenida, Selectiva, Alternada, Dividida')),
-    Field('descripcion', 'text', default='', label=T('Descripcion')),
-    format='%(nombre)s')
-
-db.nivel_atencional._singular = T('Nivel de atención')
-db.nivel_atencional._plural = T('Niveles de atención')
-
-db.nivel_atencional.nombre.requires = IS_NOT_EMPTY()
-
-
-db.define_table('resultado_general',
-    Field('fecha', 'date', default=request.now, label=T('Fecha')),
-    Field('nivel_atencional', 'reference nivel_atencional', label=T('Nivel atencional')),
-    Field('resultado', 'string', label=T('Resultado')),
-    Field('observacion', 'text', default='', label=T('Observaciones')),
-    format='%(id)s')
-
-db.resultado_general._singular = T('Observación general')
-db.resultado_general._plural = T('Observaciones generales')
-
-db.resultado_general.fecha.requires = IS_DATE()
-db.resultado_general.resultado.requires = IS_IN_SET({'Mejor': T('Mejor'), 'Igual': T('Igual'), 'Peor': T('Peor')}, zero=T('Choose one'), error_message=T('Choose one'))
-db.resultado_general.observacion.requires = IS_NOT_EMPTY()
-
-
-db.define_table('ejercicio',
-    Field('hora_inicio', 'datetime', default=request.now, label=T('Hora de inicio')),
-    Field('hora_fin', 'datetime', default=request.now, label=T('Hora de fin')),
-    Field('tiempo_completar', 'double', label=T('Tiempo en completar')),
-    Field('nivel_atencional', 'reference nivel_atencional', label=T('Nivel atencional')),
-    Field('estudiante', 'reference auth_user', label=T('Estudiante')),
-    format='%(id)s')
-
-db.ejercicio._singular = T('Ejercicio')
-db.ejercicio._plural = T('Ejercicios')
-
-db.ejercicio.hora_inicio.requires = IS_DATETIME()
-db.ejercicio.hora_fin.requires = IS_DATETIME()
-
-db.ejercicio.tiempo_completar.compute = lambda r:r['hora_fin']-r['hora_inicio']
-
-
-#Control Resultados {id estudiante, id evaluador, id ejercicio, # aciertos, # intrusiones, # omisiones, hora de inicio, hora fin, tiempo ejecucion (lo que se demora desde que empieza hasta que termina), tiempo eficacia}
-
-db.define_table('control_resultado',
-    Field('hora_inicio', 'datetime', default=request.now, label=T('Hora de inicio')),
-    Field('hora_fin', 'datetime', default=request.now, label=T('Hora de fin')),
-    Field('tiempo_ejecucion', 'double', label=T('Tiempo ejecución')),
-    Field('tiempo_eficacia', 'double', label=T('Tiempo eficacia')),
-    Field('aciertos', 'double', label=T('Número de aciertos')),
-    Field('intrusiones', 'double', label=T('Número de intrusiones')),
-    Field('omisiones', 'double', label=T('Número de omisiones')),
-    Field('ejercicio', 'reference ejercicio', label=T('Ejercicio')),
-    Field('estudiante', 'reference auth_user', label=T('Estudiante')),
-    Field('evaluador', 'reference auth_user', label=T('Evaluador')),
-    format='%(id)s')
-
-db.control_resultado._singular = T('Control de resultado')
-db.control_resultado._plural = T('Control de resultados')
-
-db.control_resultado.hora_inicio.requires = IS_DATETIME()
-db.control_resultado.hora_fin.requires = IS_DATETIME()
-
-db.control_resultado.tiempo_ejecucion.compute = lambda r:r['hora_fin']-r['hora_inicio']
-'''

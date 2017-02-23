@@ -1,2 +1,2 @@
-diagnostico.id,diagnostico.titulo,diagnostico.descripcion,diagnostico.tipo,diagnostico.activo,diagnostico.is_active,diagnostico.created_on,diagnostico.created_by,diagnostico.modified_on,diagnostico.modified_by
-27427871383537897890627977940,"Neuropsi ""Atención y Memoria""",Diagnóstico de Atención y Memoria,0,True,True,2017-02-11 21:51:27,27427756312748366090444997323,2017-02-13 12:02:04,27427756312748366090444997323
+diagnostico.id,diagnostico.titulo,diagnostico.descripcion,diagnostico.tipo,diagnostico.tiempo,diagnostico.activo,diagnostico.is_active,diagnostico.created_on,diagnostico.created_by,diagnostico.modified_on,diagnostico.modified_by
+27432087091748039009850110663,"Neuropsi ""Atención y Memoria""",Diagnóstico de Atención y Memoria,0,0,True,True,2017-02-11 21:51:27,27427756312748366090444997323,2017-02-15 17:48:22,27427756312748366090444997323
