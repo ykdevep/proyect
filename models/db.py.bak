@@ -88,7 +88,7 @@ service = Service()
 plugins = PluginManager()
 
 auth.settings.extra_fields['auth_user']= [
-  Field('fecha_nacimiento', 'date', default=request.now, label=T('Fecha de Nacimiento'))]
+  Field('fecha_nacimiento', 'date', default=request.now.date(), label=T('Fecha de Nacimiento'))]
 
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
@@ -214,5 +214,4 @@ db.define_table('respuesta',
    Field('aciertos', 'integer', label=T('Aciertos'), comment=T('Aciertos de la respuesta')),
    Field('intrusiones', 'integer', label=T('Intruciones'), comment=T('Intrusiones de la respuesta')),
    Field('correcta', 'boolean', default=False, label=T('Correcta'), comment=T('Respuesta correcta')),
-   Field('respondida', 'boolean', default=False, label=T('Respondida'), comment=T('Respuesta respondida')),
    format='%(id)s')

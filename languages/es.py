@@ -677,6 +677,7 @@
 'Tiempo ejecución': 'Tiempo ejecución',
 'Tiempo en completar': 'Tiempo en completar',
 'Tiempo expresado en minutos del diagnóstico (m)': 'Tiempo expresado en minutos del diagnóstico (m)',
+'Tiempo expresado en minutos del diagnóstico (m) vacío si no necesita tiempo': 'Tiempo expresado en minutos del diagnóstico (m) vacío si no necesita tiempo',
 'Tiempo para realizar la pregunta espresado en segundos (s)': 'Tiempo para realizar la pregunta espresado en segundos (s)',
 'Time in Cache (h:m:s)': 'Tiempo en Caché (h:m:s)',
 'Timestamp': 'Marca de tiempo',

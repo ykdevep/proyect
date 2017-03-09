@@ -2648,3 +2648,13 @@
 [2017-02-23 14:19:31] EDIT proyect/controllers/estudiante.py: 0
 [2017-02-23 14:20:48] EDIT proyect/controllers/estudiante.py: -21
 [2017-02-23 14:20:53] EDIT proyect/controllers/estudiante.py: 0
+[2017-03-09 15:30:41] EDIT proyect/private/appconfig.ini: 0
+[2017-03-09 15:35:50] EDIT proyect/private/appconfig.ini: 0
+[2017-03-09 15:41:45] EDIT proyect/models/db.py: -1
+[2017-03-09 15:42:10] EDIT proyect/models/db.py: -1
+[2017-03-09 15:43:16] EDIT proyect/models/db.py: 1
+[2017-03-09 15:43:31] EDIT proyect/models/db.py: 1
+[2017-03-09 15:55:57] EDIT proyect/models/db.py: 0
+[2017-03-09 16:11:18] EDIT proyect/models/db.py: -59
+[2017-03-09 16:11:35] CREATE db_dignostico.py: 0
+[2017-03-09 16:11:43] EDIT proyect/models/db_dignostico.py: 59
