@@ -134,3 +134,31 @@ def logs():
     if heading:
            heading[0].append(INPUT(_type='checkbox', _onclick="jQuery('input[type=checkbox]').each(function(k){jQuery(this).attr('checked', 'checked');});"))
     return dict(grid=grid)
+
+@auth.requires_membership("Administrador")
+def secciones():
+    selectable = lambda ids: db(db.secciones.id.belongs(ids)).delete()
+
+    grid = SQLFORM.smartgrid(db.secciones, linked_tables=[],  selectable=selectable, exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))
+
+    response.flash = T("Administrar secciones")
+    response.title = T("Administrar secciones") + response.title
+
+    heading=grid.elements('th')
+    if heading:
+        heading[0].append(INPUT(_type='checkbox', _onclick="$('input[type=checkbox]').each(function(k){$(this).attr('checked', 'checked');});"))
+    return dict(grid=grid)
+
+@auth.requires_membership("Administrador")
+def antecedentes_medicos():
+    selectable = lambda ids: db(db.antecedentes_medicos.id.belongs(ids)).delete()
+
+    grid = SQLFORM.smartgrid(db.antecedentes_medicos, linked_tables=[],  selectable=selectable, exportclasses=dict(xml=False, html=False, json=False, csv_with_hidden_cols=False, tsv_with_hidden_cols=False))
+
+    response.flash = T("Administrar antecedentes médicos")
+    response.title = T("Administrar antecedentes médicos") + response.title
+
+    heading=grid.elements('th')
+    if heading:
+        heading[0].append(INPUT(_type='checkbox', _onclick="jQuery('input[type=checkbox]').each(function(k){jQuery(this).attr('checked', 'checked');});"))
+    return dict(grid=grid)

@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+
+<h3 class="wow fadeInLeft">{{=T("Gestionar Tipo de pregunta")}} </h3>
+
+<hr />
+{{=grid}}

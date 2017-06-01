@@ -1,0 +1,118 @@
+<article>
+{{if sesion:}}
+    <!--Card-->
+    <div class="card" style="padding: 10px;">
+        <!--Card title-->
+        <div class="overlay hm-white-slight">
+                {{=sesion.tipo_pregunta}}
+                <!--Text-->
+                <hr/>
+            </div>
+        <div class="overlay hm-white-slight">
+            <!--Text-->
+            {{if request.args(1) == "True":}}
+                <p class="card-text">{{=sesion.descripcion}}</p>
+                {{=A(T("Comenzar"), _id="comenzar", _class="btn btn-default btn-lg", _href=URL('estudiante', 'visor_secciones.load', args=[request.args(0), False, sesion.id]))}}
+            {{else:}}
+                <div class="col-md-12">
+                    {{=LOAD('estudiante', 'visor_preguntas.load', args=[request.args(0), False, sesion.id])}}
+                </div>
+            {{pass}}
+        </div>
+        <!--/.Card title-->
+    </div>
+    <!--/.Card content-->
+    
+    {{if sesion.tipo_pregunta == "1-) Datos generales y antecedentes médicos" or sesion.tipo_pregunta == "2-) Orientación":}}
+        <script>
+            $(function(){
+                var timer;
+                var tiempo = new Date();
+                tiempo.setHours(0);
+                tiempo.setMinutes(0);
+                tiempo.setSeconds(0);
+                $("#comenzar").click(function(event){
+
+                    var diagnosticoForm = $('#diagnostico-form').serializeArray();
+
+                    // obtiene información en formato JSON desde el servidor
+                    $.getJSON("{{=URL('estudiante', 'get_tiempo')}}", diagnosticoForm, function(json) {
+                        if (json.time){
+
+                            var time = tiempo.getTime()-json.time*-1;
+                            if (json.start){
+                                tiempo.setTime(time);
+                                timer = $.timer(1000, function() {
+                                            var start = $('#diagnostico-time').val();
+
+                                            if (start == 'false'){
+                                               timer.stop();
+                                            } else {
+                                                time = 1000 + time;
+                                                tiempo.setTime(time);
+                                                $("#time").text(tiempo.toLocaleTimeString());
+                                            }
+
+                                        });
+                            } else {
+                                tiempo.setTime(time);
+                                $("#time").text(tiempo.toLocaleTimeString());
+                            }
+                        } else {
+                            $("#time").text("Error");
+                        }
+                    });
+                });
+            });
+        </script>
+    {{else:}}
+        <script>
+            $(function(){
+                var timer;
+                var tiempo = new Date();
+                tiempo.setHours(0);
+                tiempo.setMinutes(0);
+                tiempo.setSeconds(0);
+                
+                var diagnosticoForm = $('#diagnostico-form').serializeArray();
+
+                // obtiene información en formato JSON desde el servidor
+                $.getJSON("{{=URL('estudiante', 'get_tiempo')}}", diagnosticoForm, function(json) {
+                    if (json.time){
+
+                        var time = tiempo.getTime()-json.time*-1;
+                        if (json.start){
+                            tiempo.setTime(time);
+                            timer = $.timer(1000, function() {
+                                        var start = $('#diagnostico-time').val();
+
+                                        if (start == 'false'){
+                                           timer.stop();
+                                        } else {
+                                            time = 1000 + time;
+                                            tiempo.setTime(time);
+                                            $("#time").text(tiempo.toLocaleTimeString());
+                                        }
+
+                                    });
+                        } else {
+                            tiempo.setTime(time);
+                            $("#time").text(tiempo.toLocaleTimeString());
+                        }
+                    } else {
+                        $("#time").text("Error");
+                    }
+                });
+            });
+        </script>
+    {{pass}}
+
+{{else:}}
+    {{=H1(T("Se acabaron las secciones de este cuestionario"))}}
+    <script text="javascript">
+        $(function () {
+            $('#diagnostico-time').val('false');
+        });
+    </script>
+{{pass}}
+</article>

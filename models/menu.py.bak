@@ -54,7 +54,8 @@ def _():
             ("new_student", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Nuevo Estudiante')), _href=URL("admin", "new_student"), **{'_data-target': "#new_student"})),
             ("new_user", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Nuevo Visitante')), _href=URL("admin", "new_user"), **{'_data-target': "#new_user"})),
             ("users", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Gestionar rol a usuario')), _href=URL("admin", "users"), **{'_data-target': "#users"})),
-            ("centros", False, A(CAT(XML('<ico class="glyphicon glyphicon-home"></ico> '), T('Gestionar Centros')), _href=URL("admin", "centros"), **{'_data-target': "#centros"})),
+            ("secciones", False, A(CAT(XML('<ico class="glyphicon glyphicon-tags"></ico> '), T('Gestionar Secciones')), _href=URL("admin", "secciones"), **{'_data-target': "#secciones"})),
+            ("antecedentes_medicos", False, A(CAT(XML('<ico class="glyphicon glyphicon-tags"></ico> '), T('Gestionar Antecendentes médicos')), _href=URL("admin", "antecedentes_medicos"), **{'_data-target': "#antecedentes_medicos"})),
            ]
         )]
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-tasks"></ico> '), T('Estadísticas de Uso')),False, URL(), [
@@ -64,7 +65,7 @@ def _():
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnóstico')), False, URL(), [
             ("gestionar_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-th-list"></ico> '), T('Gestionar Diagnósticos')), _href=URL("especialista", "gestionar_diagnostico"), **{'_data-target': "#gestionar_diagnostico"})),
             ("nuevo_diagnostico_inicial", False, A(CAT(XML('<ico class="glyphicon glyphicon-plus"></ico> '), T('Nuevo Diagnóstico Inicial')), _href=URL("especialista", "nuevo_diagnostico_inicial"), **{'_data-target': "#nuevo_diagnostico_inicial"})),
-            ("asignar_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-list-alt"></ico> '), T('Asignar Diagnóstico')), _href=URL("especialista", "asignar_diagnostico"), **{'_data-target': "#asignar_diagnostico"})),
+
             ]
         )]
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Mejorar Atención')), False, URL(), []

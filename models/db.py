@@ -88,7 +88,15 @@ service = Service()
 plugins = PluginManager()
 
 auth.settings.extra_fields['auth_user']= [
-  Field('fecha_nacimiento', 'date', default=request.now.date(), label=T('Fecha de Nacimiento'))]
+  Field('fecha_nacimiento', 'date', default=request.now.date(), label=T('Fecha de Nacimiento')),
+  Field('ci_nivel', 'integer', label=T('Sección'), writable=False, readable=False, default=0, comment=T('Preguntas realizadas del cuestionario Inicial')),
+  Field('sexo', 'integer', label=T('Sexo'), writable=False, readable=False, default=None, comment=T('Sexo del encuestado')),
+  Field('escolaridad', 'integer', label=T('Escolaridad'), writable=False, default=None, readable=False, comment=T('Escolaridad del encuestado')),
+  Field('lateralidad', 'integer', label=T('Lateralidad'), writable=False, default=None, readable=False, comment=T('Lateralidad del encuestado')),
+  Field('ciudad', 'string', label=T('Ciudad'), writable=False, readable=False, default=None, comment=T('Ciudad donde reside el encuestado')),
+  Field('localidad', 'string', label=T('Localidad'), writable=False, readable=False, default=None, comment=T('Localidad donde reside el encuestado')),
+  Field('enfermedad', 'list:reference antecedentes_medicos', writable=False, default=None,  readable=False, label=T('Antecedentes Médicos'), comment=T('Antecedentes médicos del encuestado'))
+]
 
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables

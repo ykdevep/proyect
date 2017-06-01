@@ -36,11 +36,15 @@
         </div>
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('admin', 'centros')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-home"></ico> {{=T("Gestionar Centros")}}</a>
+            <a href="{{=URL('admin', 'secciones')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-tags"></ico> {{=T("Gestionar secciones")}}</a>
         </div>
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('admin', 'logs')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.7s"><ico class="glyphicon glyphicon-tasks"></ico> {{=T("Gestionar Logs")}}</a>
+            <a href="{{=URL('admin', 'logs')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.8s"><ico class="glyphicon glyphicon-tags"></ico> {{=T("Gestionar Logs")}}</a>
+        </div>
+        <div class="col-md-3">
+            <!--Card-->
+            <a href="{{=URL('admin', 'antecedentes_medicos')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.9s"><ico class="glyphicon glyphicon-tags"></ico> {{=T("Gestionar Antecedentes médicos")}}</a>
         </div>
     </div>
 
@@ -114,7 +118,7 @@
         <h5>{{=T("Diagnósticos")}}</h5>
         <div class="col-md-3">
             <!--Card-->
-            <a href="{{=URL('estudiante', 'cuestionario_diagnostico')}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Diagnóstico Inicial")}}</a>
+            <a href="{{=URL('estudiante', 'cuestionario_diagnostico', args=[auth.user.ci_nivel])}}" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.2s"><ico class="glyphicon glyphicon-edit"></ico> {{=T("Diagnóstico Inicial")}}</a>
         </div>
 
         <div class="col-md-3">

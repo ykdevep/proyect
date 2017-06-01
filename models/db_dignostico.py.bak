@@ -1,1 +1,85 @@
 # -*- coding: utf-8 -*-
+tipo_diagnostico = {'0': T('Inicial'), '1': T('Atención Enfocada'), '2': T('Atención Sostenida'), '3': T('Atención Selectiva'), '4': T('Atención Alternada'), '5': T('Atención Dividida')}
+numero_ensayo = {'0': T('Ensayo #1'), '1': T('Ensayo #2')}
+
+db.define_table('diagnostico',
+   Field('titulo', 'string', label=T('Título'), comment=T('Título del diagnóstico')),
+   Field('descripcion', 'text', label=T('Descripción'), comment=T('Descripción del diagnóstico')),
+   Field('tipo', 'string', label=T('Tipo de diagnóstico'), comment=T('Tipo de cuestionario diagnóstico')),
+   Field('tiempo', 'integer', label=T('Tiempo de diagnóstico'), comment=T('Tiempo expresado en minutos del diagnóstico (m) vacío si no necesita tiempo')),
+   Field('activo', 'boolean', default=False, label=T('Activo'), comment=T('¿Cuestionario activo? Solo puede habrá uno activado por tipo.')),
+   format='%(titulo)s')
+
+db.diagnostico._singular = T('Diagnóstico')
+db.diagnostico._plural = T('Diagnósticos')
+
+db.diagnostico.titulo.requires = [IS_NOT_EMPTY(), IS_NOT_IN_DB(db, 'diagnostico.titulo')]
+db.diagnostico.descripcion.requires = IS_NOT_EMPTY()
+db.diagnostico.tipo.requires = IS_IN_SET(tipo_diagnostico, zero=T('Choose one'), error_message=T('Choose one'))
+
+db.diagnostico.tipo.represent = lambda valor, registro: tipo_diagnostico[valor]
+db.diagnostico.tiempo.represent = lambda valor, registro: CAT(valor, ' ',T('minutos'))
+db.diagnostico.titulo.represent = lambda value, register: A(value, _title=register.descripcion, **{'_data-toggle': "tooltip", '_data-placement': "right"})
+
+def desactivarDiagnostico(f):
+    """
+    Desactivar cuestionario diagnóstico activo
+    """
+    try:
+        if f.has_key('activo') and f.has_key('tipo'):
+            if f['activo']:
+                db((db.diagnostico.id > 0) & (db.diagnostico.tipo == f['tipo'])).update(activo=False)
+        return None
+    except Exception, e:
+        return True
+
+db.diagnostico._before_insert.append(lambda f: desactivarDiagnostico(f))
+db.diagnostico._before_update.append(lambda s,f: desactivarDiagnostico(f))
+
+db.define_table('antecedentes_medicos',
+   Field('enfermedad', 'string', label=T('Enfermedad'), comment=T('Nombre de la enfermedad')),
+   format='%(enfermedad)s')
+
+db.antecedentes_medicos.enfermedad.requires = IS_NOT_EMPTY()
+
+def __pregunta(row):
+    if(row.tipo_pregunta == None):
+        return row.texto
+    else:
+        return __pregunta(db.tipo_pregunta(row.tipo_pregunta))+'/'+ row.texto
+
+db.define_table('tipo_pregunta',
+   Field('texto', 'string', label=T('Texto'), length=50, requires=IS_NOT_EMPTY(),  comment=T('Texto de la Pregunta')),
+   Field('descripcion', 'text', label=T('Descripción'), comment=T('Descripción del diagnóstico')),
+   Field('tipo_pregunta', 'reference tipo_pregunta', ondelete="SET NULL", writable=False, readable=False, default=None, label=T('Subtipo'), comment=T('Subtipo de preguntas')),
+   format=lambda r: __pregunta(r))
+
+db.tipo_pregunta._singular = T('Tipo de pregunta')
+db.tipo_pregunta._plural = T('Tipos de preguntas')
+
+db.define_table('pregunta',
+   Field('tipo', 'reference tipo_pregunta', label=T('Tipo'), comment=T('Tipo de pregunta')),
+   Field('texto', 'string', label=T('Pregunta'), default="", comment=T('Pregunta')),
+   Field('respuesta', 'string', label=T('Respuesta'), default="", comment=T('Respuesta de la pregunta')),
+   Field('ensayo', 'string', label=T("Ensayo"), default="", comment=T('Número de ensayo')),
+   Field('tiempo', 'double', label=T('Tiempo'), default=0.0, comment=T('Tiempo de visualización de la pregunta espresado en segundos (s)')),
+   Field('puntos', 'integer',  label=T('Puntos'), default=0, comment=T('Evaluación de la pregunta, 0 pregunta sin valor')),
+   Field('diagnostico', 'reference diagnostico', writable=False, readable=False, label=T('Diagnóstico')),
+   format='%(id)s')
+
+db.pregunta._singular = T('Pregunta')
+db.pregunta._plural = T('Preguntas')
+
+db.pregunta.ensayo.requires = IS_EMPTY_OR(IS_IN_SET(numero_ensayo, zero=T('Choose one'), error_message=T('Choose one')))
+
+db.pregunta.ensayo.represent = lambda valor, registro: numero_ensayo[valor]
+
+
+db.define_table('respuesta',
+   Field('pregunta', 'reference pregunta', label=T('Pregunta'), comment=T('Pregunta')),
+   Field('texto', 'text', label=T('Respuesta'), comment=T('Respuesta de la pregunta ')),
+   Field('diagnostico', 'reference diagnostico', label=T('Diagnostico'), comment=T('Diagnostico')),
+   Field('aciertos', 'integer', label=T('Aciertos'), comment=T('Aciertos de la respuesta')),
+   Field('intrusiones', 'integer', label=T('Intruciones'), comment=T('Intrusiones de la respuesta')),
+   Field('correcta', 'boolean', default=False, label=T('Correcta'), comment=T('Respuesta correcta')),
+   format='%(id)s')

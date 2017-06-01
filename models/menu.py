@@ -54,7 +54,8 @@ def _():
             ("new_student", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Nuevo Estudiante')), _href=URL("admin", "new_student"), **{'_data-target': "#new_student"})),
             ("new_user", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Nuevo Visitante')), _href=URL("admin", "new_user"), **{'_data-target': "#new_user"})),
             ("users", False, A(CAT(XML('<ico class="glyphicon glyphicon-user"></ico> '), T('Gestionar rol a usuario')), _href=URL("admin", "users"), **{'_data-target': "#users"})),
-            ("centros", False, A(CAT(XML('<ico class="glyphicon glyphicon-home"></ico> '), T('Gestionar Centros')), _href=URL("admin", "centros"), **{'_data-target': "#centros"})),
+            ("secciones", False, A(CAT(XML('<ico class="glyphicon glyphicon-tags"></ico> '), T('Gestionar Secciones')), _href=URL("admin", "secciones"), **{'_data-target': "#secciones"})),
+            ("antecedentes_medicos", False, A(CAT(XML('<ico class="glyphicon glyphicon-tags"></ico> '), T('Gestionar Antecendentes médicos')), _href=URL("admin", "antecedentes_medicos"), **{'_data-target': "#antecedentes_medicos"})),
            ]
         )]
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-tasks"></ico> '), T('Estadísticas de Uso')),False, URL(), [
@@ -78,7 +79,7 @@ def _():
         )]
     if (auth.has_membership('Estudiante')):
         response.menu += [(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnósticos Realizados')), False, URL(), [
-            ("cuestionario_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnóstico Inicial')), _href=URL("estudiante", "cuestionario_diagnostico"), **{'_data-target': "#cuestionario_diagnostico"})),
+            ("cuestionario_diagnostico", False, A(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Diagnóstico Inicial')), _href=URL("estudiante", "cuestionario_diagnostico", args=[0]), **{'_data-target': "#cuestionario_diagnostico"})),
             ("diag_enfocada", False, A(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Atención Enfocada')), _href=URL("estudiante", "diag_enfocada"), **{'_data-target': "#diag_enfocada"})),
             ("diag_sostenida", False, A(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Atención Sostenida')), _href=URL("estudiante", "diag_sostenida"), **{'_data-target': "#diag_sostenida"})),
             ("diag_selectiva", False, A(CAT(XML('<ico class="glyphicon glyphicon-edit"></ico> '), T('Atención Selectiva')), _href=URL("estudiante", "diag_selectiva"), **{'_data-target': "#diag_selectiva"})),

@@ -1,6 +1,6 @@
 {{extend 'layout.html'}}
 
-<h3 class="wow fadeInLeft">{{=mensaje}} </h3>
+<h3 class="wow fadeInLeft">{{=T("Gestionar Cuestionario")}} </h3>
 
 <hr />
 
@@ -15,7 +15,7 @@
                     return CAT(A(XML('<ico class="glyphicon glyphicon-ok"></ico>'), T("Activo")), _class="success")
                 else:
                     return CAT(A(XML('<ico class="glyphicon glyphicon-remove"></ico>'), T("Activo")))
-                pass              
+                pass
             }}
             <!--Card-->
             <div class="card" style="padding: 10px;">
@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-2">
                             <!--Title-->
-                            <h4 class="card-title">{{=diagnostico.titulo}}</h4>
+                            <h3 class="card-title">{{=diagnostico.titulo}}</h3>
                             <!--Text-->
                             <p class="card-text">{{=diagnostico.descripcion}}</p>
                         </div>
@@ -42,23 +42,13 @@
 
                 <!--Card content-->
                 <div class="card-block text-xs-center">
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 0])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 1])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 2])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 3])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 4])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 5])}}
-                    {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, 6])}}
-                    
+                    {{for seccion in diagnostico.secciones:}}
+                        {{=LOAD('especialista', 'get_pregunta.load', args=[diagnostico.id, seccion.tipo_pregunta, seccion.puntos])}}
+                    {{pass}}
+
                     <div class="row">
                         <div class="col-md-12">
                             <hr />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-9 col-md-offset-3">
-                            {{=H5(CAT(T("Evaluación de Diagnóstico: "), total_puntos, ' ', T("ptos")))}}
                         </div>
                     </div>
                 </div>
@@ -75,36 +65,5 @@
         </section>
     </div>
 {{else:}}
-    <div class="col-md-12">
-        {{=grid}}
-    </div>
+    {{=grid}}
 {{pass}}
-
-{{block head}}
-    <style>
-        .pregunta > li {
-            color: rgba(149, 67, 6, 0.73);
-        }
-
-        .respuesta > li {
-            color: rgba(84, 147, 26, 0.91);
-        }
-
-        .card-title {
-            color: #504040!important;
-        }
-        
-        .respuesta > li > input {
-            height: 25px!important;
-        }
-
-    </style>
-{{end}}
-
-{{block page_js}}
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
-{{end}}

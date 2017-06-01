@@ -1,0 +1,7 @@
+{{if user.ci_nivel == 0:}}
+    {{=H4(sesion.tipo_pregunta)}}
+    {{=P(sesion.descripcion)}}
+    {{=formulario}}
+{{else:}}
+    {{=A(T('Comenzar cuestionario'), _class='btn btn-default btn-lg', _href=URL('estudiante', 'cuestionario_diagnostico.html', args=[user.ci_nivel]))}}
+{{pass}}

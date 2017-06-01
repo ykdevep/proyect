@@ -1,0 +1,3 @@
+{{extend 'layout.html'}}
+<h1>Está es la plantilla admin/antecedentes_medicos.html</h1>
+{{=BEAUTIFY(response._vars)}}
